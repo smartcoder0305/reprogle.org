@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "pageTitle": "home",
+        "description": "The home page of Nate Reprogle",
+        "slug": "/"
+    },
+    {
+        "id": 2,
+        "pageTitle": "contact",
+        "description": "A page for contacting the site author",
+        "slug": "/contact"
+    }
+]

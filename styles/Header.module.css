@@ -1,0 +1,29 @@
+.hover_underline_animation {
+  display: inline-block;
+  position: relative;
+  color: #ffffff;
+  margin: 5px 10px;
+  padding: 5px;
+}
+
+.hover_underline_animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1.3px;
+  top: 1px;
+  left: 0;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(162, 124, 242, 1),
+    rgba(204, 142, 50, 1)
+  );
+  transform-origin: top right;
+  transition: transform 0.15s ease-out;
+}
+
+.hover_underline_animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: top left;
+}
