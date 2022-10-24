@@ -1,7 +1,6 @@
 .hover_underline_animation {
-  display: inline-block;
+  display: flex;
   position: relative;
-  color: #ffffff;
   margin: 5px 10px;
   padding: 5px;
 }

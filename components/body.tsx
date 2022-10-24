@@ -7,13 +7,13 @@ function Body({ ...props }) {
         </h3>
         <h1
           className={
-            "my-4 font-heading text-5xl font-extrabold leading-none text-white md:whitespace-nowrap md:text-6xl lg:text-7xl xl:whitespace-nowrap"
+            "my-4 font-heading text-5xl font-extrabold leading-none text-white md:whitespace-normal md:text-6xl lg:whitespace-nowrap lg:text-7xl"
           }
         >
           Nate Reprogle
         </h1>
         <h1
-          className={"font-heading text-xl font-normal text-white md:text-3xl"}
+          className={"font-heading text-xl font-normal text-white md:text-2xl"}
         >
           IT Enthusiast
         </h1>
