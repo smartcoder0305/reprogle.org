@@ -12,7 +12,7 @@ const Contact: NextPage = () => {
       <span className={"ellipse"} />
       <Nav />
       <div className={"flex h-[85vh]"}>
-        <div className={"m-auto flex flex-col space-y-4 text-center"}>
+        <div className={"m-auto flex flex-col space-y-4 px-4 text-center"}>
           <h1 className={"font-heading text-4xl text-white"}>
             Work in progress!
           </h1>
