@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "../styles/Header.module.css";
+import styles from "../styles/nav.module.css";
 import { useLayoutEffect, useEffect, useState } from "react";
 
 // Custom react hook for returning window size. Used for closing the mobile menu if
@@ -46,7 +46,7 @@ function Nav() {
         {/* primary nav */}
         <div className={"hidden items-center md:flex"} id="primary-menu">
           <Link href="/">
-            <a
+            <div
               className={
                 styles.hover_underline_animation + " items-center space-x-1"
               }
@@ -66,12 +66,13 @@ function Nav() {
                 />
               </svg>
               <span>About</span>
-            </a>
+            </div>
           </Link>
           <Link href="/contact">
-            <a
+            <div
               className={
-                styles.hover_underline_animation + " items-center space-x-1"
+                styles.hover_underline_animation +
+                " cursor-pointer items-center space-x-1"
               }
             >
               <svg
@@ -89,7 +90,7 @@ function Nav() {
                 />
               </svg>
               <span>Contact Me</span>
-            </a>
+            </div>
           </Link>
         </div>
 
@@ -124,15 +125,17 @@ function Nav() {
         }
         id="mobile-menu"
       >
-        <Link href="/">
-          <a className="block bg-white px-10 py-3 outline outline-1 outline-base-blue-100">
-            About
-          </a>
+        <Link
+          href="/"
+          className="block bg-white px-10 py-3 outline outline-1 outline-base-blue-100"
+        >
+          About
         </Link>
-        <Link href="/contact">
-          <a className="block bg-white px-10 py-3 outline outline-1 outline-base-blue-100">
-            Contact Me
-          </a>
+        <Link
+          href="/contact"
+          className="block bg-white px-10 py-3 outline outline-1 outline-base-blue-100"
+        >
+          Contact Me
         </Link>
       </div>
     </nav>

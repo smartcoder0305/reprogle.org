@@ -9,14 +9,13 @@ function Footer({ ...props }) {
           <h3 className={"font-heading text-xl"}>
             Living in Arkansas, reaching the world
           </h3>
-          <Link href="/contact">
-            <a
-              className={
-                "font-heading text-3xl font-bold underline md:text-4xl xl:text-5xl"
-              }
-            >
-              Get in touch
-            </a>
+          <Link
+            href="/contact"
+            className={
+              "font-heading text-3xl font-bold underline md:text-4xl xl:text-5xl"
+            }
+          >
+            Get in touch
           </Link>
         </div>
         <div className={"md:w-1/3"}>
