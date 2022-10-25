@@ -20,7 +20,7 @@ function Header({ ...props }) {
           IT Enthusiast
         </h1>
       </div>
-      <picture className={"xl:h-1/2 xl:w-1/2"}>
+      <picture className={"xl:h-[45%] xl:w-[45%]"}>
         <source srcSet="/Profile.jpg" type="image/jpg" />
         <img
           src={"/Profile.jpg"}

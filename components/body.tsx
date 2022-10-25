@@ -59,43 +59,74 @@ function Body({ ...props }) {
       {/* Skill & Experience */}
       <div className={"block lg:flex lg:justify-between"}>
         {/* Skills */}
-        <div>
-          <h1>Hi!</h1>
+        <div className={"mb-8 lg:w-[47%]"}>
+          <h2
+            className={
+              "mb-5 font-heading text-2xl font-bold md:text-3xl xl:text-4xl"
+            }
+          >
+            Skills
+          </h2>
+          <div>
+            <p className={"gradient mb-5 w-full pb-6"}>
+              Experience in Windows, macOS and Linux based systems
+            </p>{" "}
+            <br />
+            <p className={"gradient mb-5 w-full pb-6"}>
+              Low-level C++, C#, Java, JavaScript, and Node.js programming
+              knowledge
+            </p>{" "}
+            <br />
+            <p className={"gradient mb-5 w-full pb-6"}>
+              Certificate of Proficiency, Business Analysis
+            </p>{" "}
+            <br />
+            <p className={"gradient mb-5 w-full pb-6"}>
+              Experience with containerization using Docker and Docker Swarm
+            </p>{" "}
+            <br />
+            <p className={"gradient mb-5 w-full pb-6"}>
+              Experience with Google Cloud Platform
+            </p>{" "}
+            <br />
+          </div>
         </div>
 
         {/* My Experience */}
         <div className={"lg:w-1/2"}>
           <h2
             className={
-              "gradient mb-5 font-heading text-2xl font-bold md:text-3xl xl:text-4xl"
+              "mb-5 font-heading text-2xl font-bold md:text-3xl xl:text-4xl"
             }
           >
             My Experience
           </h2>
-          <ResumeItem
-            timeRange={"July 2021 - Present"}
-            company={"J.B. Hunt Transport, Inc."}
-            title={"Contact Center Specialist"}
-            description={
-              "Working with business leaders, design and maintain complex, enterprise-wide Contact Center routing solutions. Work with leading edge CC technologies to ensure the needs and expectations of both the business as our customers are not only met, but also exceeded."
-            }
-          />
-          <ResumeItem
-            timeRange={"December 2019 - July 2021"}
-            company={"J.B. Hunt Transport, Inc."}
-            title={"Transportation Manager"}
-            description={
-              "Manage a fleet of approx. 30 drivers. Dispatch, manage pay, and discuss safety with the fleet. Ensure drivers are DOT compliant and following FMCSA regulations. Handled other duties as assigned."
-            }
-          />
-          <ResumeItem
-            timeRange={"July 2019 - December 2019"}
-            company={"J.B. Hunt Transport, Inc."}
-            title={"Customer Experience Representative"}
-            description={
-              "Managed customer relations and priced freight upon request. Worked with truckload division to book freight as well as managed capacity for market areas, among other duties assigned."
-            }
-          />
+          <div>
+            <ResumeItem
+              timeRange={"July 2021 - Present"}
+              company={"J.B. Hunt Transport, Inc."}
+              title={"Contact Center Specialist"}
+              description={
+                "Working with business leaders, design and maintain complex, enterprise-wide Contact Center routing solutions. Work with leading edge CC technologies to ensure the needs and expectations of both the business as our customers are not only met, but also exceeded."
+              }
+            />
+            <ResumeItem
+              timeRange={"December 2019 - July 2021"}
+              company={"J.B. Hunt Transport, Inc."}
+              title={"Transportation Manager"}
+              description={
+                "Manage a fleet of approx. 30 drivers. Dispatch, manage pay, and discuss safety with the fleet. Ensure drivers are DOT compliant and following FMCSA regulations. Handled other duties as assigned."
+              }
+            />
+            <ResumeItem
+              timeRange={"July 2019 - December 2019"}
+              company={"J.B. Hunt Transport, Inc."}
+              title={"Customer Experience Representative"}
+              description={
+                "Managed customer relations and priced freight upon request. Worked with truckload division to book freight as well as managed capacity for market areas, among other duties assigned."
+              }
+            />
+          </div>
         </div>
       </div>
     </div>

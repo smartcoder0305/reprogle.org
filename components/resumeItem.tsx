@@ -1,7 +1,7 @@
 function ResumeItem({ ...props }) {
   return (
     <div className={"mb-7 block lg:flex lg:justify-between lg:space-x-5"}>
-      <div className={"flex flex-col lg:mb-4 lg:w-1/3 lg:space-y-4"}>
+      <div className={"flex flex-col lg:w-1/3 lg:space-y-2"}>
         <h1 className={"font-bold"}>{{ ...props }.timeRange}</h1>
         <h2>{{ ...props }.company}</h2>
       </div>
