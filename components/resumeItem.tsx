@@ -6,7 +6,7 @@ function ResumeItem({ ...props }) {
         <h2>{{ ...props }.company}</h2>
       </div>
       <div className={"flex flex-col lg:w-3/4 lg:space-y-2"}>
-        <h1 className={"text_gradient font-body text-2xl font-extrabold"}>
+        <h1 className={"text_gradient text-2xl font-extrabold"}>
           {{ ...props }.title}
         </h1>
         <p>{{ ...props }.description}</p>

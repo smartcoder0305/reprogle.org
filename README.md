@@ -1,5 +1,7 @@
 My website, written in [Next.js](https://nextjs.org/) and bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+`_document.tsx` renders the body of the document. Inside it, `<Main />` which calls `_app.tsx`, responsible for rendering the layout of the document and all child components.
+
 ## Getting Started
 
 First, run the development server:

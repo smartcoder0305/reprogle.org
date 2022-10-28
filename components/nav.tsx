@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from "../styles/nav.module.css";
-import { useLayoutEffect, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 // Custom react hook for returning window size. Used for closing the mobile menu if
 // A) it's open and B) the window resizes to the `md:` size
@@ -21,7 +21,7 @@ function useWindowSize() {
 function Nav() {
   // A couple state objects for handling the mobile menu
   const [menu, setMenu] = useState(false);
-  const [width, height] = useWindowSize();
+  const [width] = useWindowSize();
 
   // This useEffect hook is used for handling the opening and closing of the mobile menu
   useEffect(() => {

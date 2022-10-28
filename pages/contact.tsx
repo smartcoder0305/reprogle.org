@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Nav from "../components/nav";
+import ContactForm from "../components/contactForm";
 
 const Contact: NextPage = () => {
   return (
@@ -9,6 +9,7 @@ const Contact: NextPage = () => {
         <title>Contact Me</title>
         <meta name="description" content="Contact Nate via this page" />
       </Head>
+      <ContactForm />
       <div className={"flex h-[85vh]"}>
         <div className={"m-auto flex flex-col space-y-4 px-4 text-center"}>
           <h1
