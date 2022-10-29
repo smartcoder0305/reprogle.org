@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prod": "npm run build && npm run start"
   },
   "dependencies": {
     "next": "^13.0.0",
