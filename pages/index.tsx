@@ -12,8 +12,13 @@ const Home: NextPage = () => {
       </Head>
       <Header
         className={
-          "my-10 space-x-36 px-5 md:mx-auto md:flex md:max-w-screen-md md:justify-evenly md:space-x-20 lg:max-w-screen-lg xl:max-w-screen-xl"
+          "my-10 space-x-36 px-5 md:mx-auto md:flex md:max-w-screen-md md:justify-around md:space-x-20 lg:max-w-screen-lg xl:max-w-screen-xl"
         }
+        headerText="Hello, my name is"
+        mainText="Nate Reprogle"
+        footerText="IT Enthusiast"
+        image="/Profile.jpg"
+        imageAlt="Nate Reprogle"
       />
       <Body
         className={

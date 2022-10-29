@@ -5,26 +5,26 @@ function Header({ ...props }) {
         <h3
           className={"gradient pb-3 font-body text-base font-normal text-white"}
         >
-          Hello, my name is
+          {{ ...props }.headerText}
         </h3>
         <h1
           className={
             "my-4 font-heading text-5xl font-extrabold leading-none text-white md:whitespace-normal md:text-6xl lg:whitespace-nowrap lg:text-7xl"
           }
         >
-          Nate Reprogle
+          {{ ...props }.mainText}
         </h1>
         <h1
           className={"font-heading text-xl font-normal text-white md:text-2xl"}
         >
-          IT Enthusiast
+          {{ ...props }.footerText}
         </h1>
       </div>
       <picture className={"xl:h-[45%] xl:w-[45%]"}>
-        <source srcSet="/Profile.jpg" type="image/jpg" />
+        <source srcSet={{ ...props }.image} type="image/jpg" />
         <img
-          src={"/Profile.jpg"}
-          alt="Nate Reprogle"
+          src={{ ...props }.image}
+          alt={{ ...props }.imageAlt}
           className={"rounded-full"}
         />
       </picture>

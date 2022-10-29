@@ -121,19 +121,19 @@ function Nav() {
       {/* mobile menu here */}
       <div
         className={
-          "absolute hidden w-full text-black outline outline-1 outline-base-blue-200"
+          "absolute z-10 hidden w-full text-black outline outline-1 outline-base-blue-200"
         }
         id="mobile-menu"
       >
         <Link
           href="/"
-          className="block bg-white px-10 py-3 outline outline-1 outline-base-blue-100"
+          className="block cursor-pointer bg-white px-10 py-3 outline outline-1 outline-base-blue-100"
         >
           About
         </Link>
         <Link
           href="/contact"
-          className="block bg-white px-10 py-3 outline outline-1 outline-base-blue-100"
+          className="block cursor-pointer bg-white px-10 py-3 outline outline-1 outline-base-blue-100"
         >
           Contact Me
         </Link>
