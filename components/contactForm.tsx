@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import secrets from "../secure/secrets.json";
 
 export default function ContactForm() {
   const [fname, setFName] = useState("John");
@@ -33,7 +34,7 @@ export default function ContactForm() {
         ],
       };
 
-      fetch(process.env.WEBHOOK as unknown as URL, {
+      fetch(secrets.webhook, {
         method: "POST",
         body: JSON.stringify(contents),
         headers: {
@@ -118,7 +119,7 @@ export default function ContactForm() {
           ></textarea>
         </div>
         <ReCAPTCHA
-          sitekey={process.env.CAPTCHAKEY}
+          sitekey={secrets.captchaKey}
           onChange={setToken}
           theme="dark"
         />
