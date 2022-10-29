@@ -107,7 +107,7 @@ function Body({ ...props }) {
               company={"J.B. Hunt Transport, Inc."}
               title={"Contact Center Specialist"}
               description={
-                "Working with business leaders, design and maintain complex, enterprise-wide Contact Center routing solutions. Work with leading edge CC technologies to ensure the needs and expectations of both the business as our customers are not only met, but also exceeded."
+                "Working with business leaders, design and maintain complex, enterprise-wide Contact Center routing solutions. Work with leading edge CC technologies to ensure the needs and expectations of both the business and our customers are not only met, but also exceeded."
               }
             />
             <ResumeItem
