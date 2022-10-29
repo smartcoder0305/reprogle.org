@@ -13,7 +13,7 @@ const handle = app.getRequestHandler();
 
 const httpsOptions = {
   key: fs.readFileSync("./secure/privkey.pem"),
-  cert: fs.readFileSync("./secure/cert.pem"),
+  cert: fs.readFileSync("./secure/fullchain.pem"),
 };
 
 app.prepare().then(() => {
