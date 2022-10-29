@@ -21,11 +21,11 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Create .env file based on Github Secrets
-        uses: ozaytsev86/create-env-file-action@v1
+        uses: SpicyPizza/create-envfile@v1.3
         with:
-          file-name: ".env.local"
-          ENV_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-          ENV_CAPTCHAKEY: ${{ secrets.CAPTCHA_KEY }}
+          envkey_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          envkey_CAPTCHAKEY: ${{ secrets.CAPTCHA_KEY }}
+          file_name: .env.local
 
       # This step is where our service account will be authenticated
       - uses: google-github-actions/setup-gcloud@v0.2.0
