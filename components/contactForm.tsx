@@ -1,6 +1,5 @@
 import { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
-import tokens from "../secure/secrets.json";
 
 export default function ContactForm() {
   const [fname, setFName] = useState("John");
@@ -34,9 +33,7 @@ export default function ContactForm() {
         ],
       };
 
-      // POST the webhook. The webhook is retrieved from a file called "tokens.json" in a
-      // folder called "secure" not synced to GitHub for obvious reasons lol
-      fetch(tokens.webhook, {
+      fetch(process.env.webhook as unknown as URL, {
         method: "POST",
         body: JSON.stringify(contents),
         headers: {
@@ -121,7 +118,7 @@ export default function ContactForm() {
           ></textarea>
         </div>
         <ReCAPTCHA
-          sitekey={tokens.captchaKey}
+          sitekey={process.env.captchaKey}
           onChange={setToken}
           theme="dark"
         />
