@@ -22,10 +22,10 @@ jobs:
 
       - name: Create .env file based on Github Secrets
         uses: ozaytsev86/create-env-file-action@v1
+        file-name: .env.local
         with:
           ENV_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
           ENV_CAPTCHAKEY: ${{ secrets.CAPTCHA_KEY }}
-          file-name: .env.local
 
       # This step is where our service account will be authenticated
       - uses: google-github-actions/setup-gcloud@v0.2.0
