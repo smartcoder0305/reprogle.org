@@ -33,7 +33,7 @@ export default function ContactForm() {
         ],
       };
 
-      fetch(process.env.webhook as unknown as URL, {
+      fetch(process.env.WEBHOOK as unknown as URL, {
         method: "POST",
         body: JSON.stringify(contents),
         headers: {
@@ -118,7 +118,7 @@ export default function ContactForm() {
           ></textarea>
         </div>
         <ReCAPTCHA
-          sitekey={process.env.captchaKey}
+          sitekey={process.env.CAPTCHAKEY}
           onChange={setToken}
           theme="dark"
         />
