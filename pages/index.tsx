@@ -27,16 +27,15 @@ const Home: NextPage = () => {
           content="2022-10-29T15:18:00+00:00"
         />
         <meta property="og:image" content="https://reprogle.org/Profile.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@NateReprogle" />
+        <meta name="twitter:creator" content="@NateReprogle" />
         <meta name="twitter:title" content="Home - Nate Reprogle" />
         <meta
           name="twitter:description"
           content="The website for Nate Reprogle. Nate is an IT Enthusiast with a career in Contact Centers based in Arkansas."
         />
-        <meta name="twitter:site" content="@NateReprogle" />
-        <meta name="twitter:creator" content="@NateReprogle" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:label1" content="Est. reading time" />
-        <meta name="twitter:data1" content="4 minutes" />
+        <meta name="twitter:image" content="https://reprogle.org/Profile.jpg" />
       </Head>
       <Header
         className={
