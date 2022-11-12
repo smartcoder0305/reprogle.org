@@ -73,20 +73,22 @@ function Body({ ...props }) {
             </p>{" "}
             <br />
             <p className={"gradient mb-5 w-full pb-6"}>
-              Low-level C++, C#, Java, JavaScript, and Node.js programming
-              knowledge
+              Experience in web development frameworks such as JavaScript,
+              TypeScript, React, NextJS, and TailwindCSS (This site uses all of
+              those!)
             </p>{" "}
             <br />
             <p className={"gradient mb-5 w-full pb-6"}>
-              Certificate of Proficiency, Business Analysis
+              Bachelors in Business Administration, majoring in Business
+              Information Systems. Certificate of Proficiency, Business Analysis
             </p>{" "}
             <br />
             <p className={"gradient mb-5 w-full pb-6"}>
-              Experience with containerization using Docker and Docker Swarm
+              Experience with container orchestration using Docker
             </p>{" "}
             <br />
             <p className={"gradient mb-5 w-full pb-6"}>
-              Experience with Google Cloud Platform
+              Experience with Google Cloud Platform and AWS
             </p>{" "}
             <br />
           </div>
