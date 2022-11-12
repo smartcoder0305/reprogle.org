@@ -11,7 +11,7 @@ export default function Layout({ children }) {
       <main>{children}</main>
       <span
         className={
-          "absolute w-full outline outline-[0.5px] outline-base-blue-200"
+          "absolute w-full outline outline-[0.5px] outline-dark-base-blue-200"
         }
       />
       <Footer

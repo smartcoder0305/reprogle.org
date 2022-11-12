@@ -29,7 +29,7 @@ const Contact: NextPage = () => {
       </Head>
       <Header
         className={
-          "my-10 space-x-36 px-5 md:mx-auto md:flex md:max-w-screen-md md:justify-around md:space-x-20 lg:max-w-screen-lg xl:max-w-screen-xl"
+          "my-10 space-x-36 px-4 md:mx-auto md:flex md:max-w-screen-md md:justify-between md:space-x-20 lg:max-w-screen-lg xl:max-w-screen-xl"
         }
         headertext="Feel free to"
         maintext="Contact Me"
@@ -39,7 +39,7 @@ const Contact: NextPage = () => {
       />
       <div
         className={
-          "my-20 mx-6 text-white md:mx-auto md:flex md:max-w-screen-md md:justify-evenly lg:max-w-screen-lg xl:max-w-screen-xl"
+          "my-20 px-4 text-white md:mx-auto md:flex md:max-w-screen-md md:justify-between md:px-5 lg:max-w-screen-lg xl:max-w-screen-xl"
         }
       >
         <div className={"mb-5 flex w-full flex-col space-y-4 md:w-1/2 md:pr-5"}>

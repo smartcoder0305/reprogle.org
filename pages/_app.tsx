@@ -1,8 +1,8 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
+import { useEffect } from "react";
 import Layout from "../components/layout";
 import ReactGA from "react-ga";
-import { useEffect } from "react";
 import TagManager from "react-gtm-module";
 
 function MyApp({ Component, pageProps }: AppProps) {
