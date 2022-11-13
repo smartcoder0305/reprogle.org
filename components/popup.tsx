@@ -25,7 +25,10 @@ function Popup({ ...props }) {
       }
       onClick={() => props.setTrigger(false)}
     >
-      <div className="relative m-[32px] flex max-w-screen-sm flex-col rounded-xl bg-white p-[32px] lg:max-w-screen-md xl:max-w-screen-lg">
+      <div
+        className="relative m-[32px] flex max-w-screen-sm flex-col rounded-xl bg-white p-[32px] lg:max-w-screen-md xl:max-w-screen-lg"
+        onClick={(event) => event.stopPropagation()}
+      >
         <button
           className="absolute right-[14px] top-[10px] text-lg font-bold text-black"
           onClick={() => props.setTrigger(false)}
