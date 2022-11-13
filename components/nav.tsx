@@ -33,7 +33,7 @@ function Nav() {
   // This is used to close the menu if the display width changes, particularly if it changes to the full-sized menu
   useEffect(() => {
     const mobileMenu = document.getElementById("mobile-menu");
-    if (!mobileMenu?.classList.contains("hidden") && width >= 768) {
+    if (!mobileMenu?.classList.contains("hidden")) {
       mobileMenu?.classList.add("hidden");
       setMenu(false);
     }
