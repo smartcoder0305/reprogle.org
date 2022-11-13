@@ -33,7 +33,7 @@ export default function ContactForm() {
         ],
       };
 
-      fetch(`${process.env.WEBHOOK}`, {
+      fetch(`${process.env.NEXT_PUBLIC_WEBHOOK}`, {
         method: "POST",
         body: JSON.stringify(contents),
         headers: {
@@ -118,7 +118,7 @@ export default function ContactForm() {
           ></textarea>
         </div>
         <ReCAPTCHA
-          sitekey={`${process.env.CAPTCHAKEY}`}
+          sitekey={`${process.env.NEXT_PUBLIC_CAPTCHAKEY}`}
           onChange={setToken}
           theme="dark"
         />
