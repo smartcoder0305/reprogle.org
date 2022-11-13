@@ -1,6 +1,5 @@
 import { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
-import secrets from "../secure/secrets.json";
 
 export default function ContactForm() {
   const [fname, setFName] = useState("John");
