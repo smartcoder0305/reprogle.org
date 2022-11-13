@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Popup from "./popup";
 import { useState } from "react";
+import { Transition } from "@headlessui/react";
 
 function Footer({ ...props }) {
   const [instagram, setInstagram] = useState(false);
@@ -35,7 +36,15 @@ function Footer({ ...props }) {
               >
                 Twitter
               </button>
-              {twitter && (
+              <Transition
+                show={twitter}
+                enter="transition-all duration-300"
+                enterFrom="opacity-0"
+                enterTo="opacity-100"
+                leave="transition-opacity duration-300"
+                leaveFrom="opacity-100"
+                leaveTo="opacity-0"
+              >
                 <Popup
                   trigger={twitter}
                   message={
@@ -46,7 +55,7 @@ function Footer({ ...props }) {
                   redirectLink={"https://twitter.com/natereprogle"}
                   redirectTime={7}
                 />
-              )}
+              </Transition>
             </li>
             <li>
               <Link href="https://www.linkedin.com/in/natereprogle/">
@@ -55,7 +64,15 @@ function Footer({ ...props }) {
             </li>
             <li>
               <button onClick={() => setInstagram(true)}>Instagram</button>
-              {instagram && (
+              <Transition
+                show={instagram}
+                enter="transition-all duration-300"
+                enterFrom="opacity-0"
+                enterTo="opacity-100"
+                leave="transition-opacity duration-300"
+                leaveFrom="opacity-100"
+                leaveTo="opacity-0"
+              >
                 <Popup
                   trigger={instagram}
                   message={
@@ -66,7 +83,7 @@ function Footer({ ...props }) {
                   redirectLink={"https://www.instagram.com/natereprogle/"}
                   redirectTime={7}
                 />
-              )}
+              </Transition>
             </li>
           </ul>
         </div>

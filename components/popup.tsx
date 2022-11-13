@@ -21,7 +21,7 @@ function Popup({ ...props }) {
   return (
     <div
       className={
-        "fixed top-0 left-0 flex min-h-screen w-full items-center justify-center bg-[rgb(0,0,0,0.2)] text-left text-black backdrop-blur-sm"
+        "fixed top-0 left-0 flex min-h-screen w-full items-center justify-center bg-[rgb(0,0,0,0.85)] text-left text-black"
       }
       onClick={() => props.setTrigger(false)}
     >
