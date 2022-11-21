@@ -1,21 +1,24 @@
 import { useState } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
+import { Turnstile } from "@marsidev/react-turnstile";
 
 export default function ContactForm() {
   const [fname, setFName] = useState("John");
   const [lname, setLName] = useState("Doe");
   const [email, setEmail] = useState("john.doe@email.com");
   const [message, setMessage] = useState("I was hoping to inquire about...");
-  const [token, setToken] = useState();
+  const [turnstile, setTurnstile] = useState("error");
   const [confirm, setConfirm] = useState("hidden");
   const [button, setButton] = useState(
     "text_gradient mt-2 cursor-pointer rounded-md py-2 font-extrabold"
   );
 
-  const handleSubmit = (event: React.FormEvent) => {
+  async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
-    if (!token) {
-      alert("reCAPTCHA verification failed. Please try again");
+
+    if (turnstile === "error" || turnstile === "expired") {
+      alert(
+        "Turnstile verification failed. Please refresh the page and try again"
+      );
     } else {
       // This will create a webhook to send to Discord. I was going to do email but webhooks were way easier
       const contents = {
@@ -43,7 +46,7 @@ export default function ContactForm() {
       setConfirm("");
       setButton("hidden");
     }
-  };
+  }
 
   return (
     <div className={"mb-7 block text-white md:flex md:justify-between"}>
@@ -117,10 +120,12 @@ export default function ContactForm() {
             required
           ></textarea>
         </div>
-        <ReCAPTCHA
-          sitekey={`${process.env.NEXT_PUBLIC_CAPTCHAKEY}`}
-          onChange={setToken}
-          theme="dark"
+        <Turnstile
+          siteKey={`${process.env.NEXT_PUBLIC_TURNSTILE_SECRET}`}
+          onSuccess={(token) => setTurnstile(token)}
+          onError={() => setTurnstile("error")}
+          onExpire={() => setTurnstile("expired")}
+          options={{ theme: "dark" }}
         />
         <button type="submit" value="Submit" className={button}>
           SUBMIT
