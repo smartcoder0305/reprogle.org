@@ -45,6 +45,7 @@ export default function ContactForm() {
       }
       case "expired": {
         alert("Turnstile verification expired. Please refresh and try again");
+        break;
       }
       default: {
         // This will create a webhook to send to Discord. I was going to do email but webhooks were way easier
