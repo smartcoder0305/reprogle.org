@@ -69,18 +69,13 @@ function Body({ ...props }) {
           </h2>
           <div>
             <p className={"gradient mb-5 w-full pb-6"}>
-              Experience in Windows, macOS and Linux based systems
-            </p>{" "}
-            <br />
-            <p className={"gradient mb-5 w-full pb-6"}>
-              Experience in web development frameworks such as JavaScript,
-              TypeScript, React, NextJS, and TailwindCSS (This site uses all of
-              those!)
-            </p>{" "}
-            <br />
-            <p className={"gradient mb-5 w-full pb-6"}>
               Bachelors in Business Administration, majoring in Business
               Information Systems. Certificate of Proficiency, Business Analysis
+            </p>{" "}
+            <br />
+            <p className={"gradient mb-5 w-full pb-6"}>
+              Experience in web development frameworks such as React, NextJS,
+              and TailwindCSS (This site uses all of those!)
             </p>{" "}
             <br />
             <p className={"gradient mb-5 w-full pb-6"}>
@@ -89,6 +84,11 @@ function Body({ ...props }) {
             <br />
             <p className={"gradient mb-5 w-full pb-6"}>
               Experience with Google Cloud Platform and AWS
+            </p>{" "}
+            <br />
+            <p className={"gradient mb-5 w-full pb-6"}>
+              Ability to grasp new concepts quickly, and easily teachable. It
+              may not be a &quot;skill&quot;, but it&apos;s a nice trait!
             </p>{" "}
             <br />
           </div>

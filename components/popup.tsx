@@ -21,11 +21,14 @@ function Popup({ ...props }) {
   return (
     <div
       className={
-        "fixed top-0 left-0 flex min-h-screen w-full items-center justify-center bg-[rgb(0,0,0,0.2)] text-left text-black backdrop-blur-sm"
+        "fixed top-0 left-0 flex min-h-screen w-full items-center justify-center bg-[rgb(0,0,0,0.85)] text-left text-black"
       }
       onClick={() => props.setTrigger(false)}
     >
-      <div className="relative m-[32px] flex max-w-screen-sm flex-col rounded-xl bg-white p-[32px] lg:max-w-screen-md xl:max-w-screen-lg">
+      <div
+        className="relative m-[32px] flex max-w-screen-sm flex-col rounded-xl bg-white p-[32px] lg:max-w-screen-md xl:max-w-screen-lg"
+        onClick={(event) => event.stopPropagation()}
+      >
         <button
           className="absolute right-[14px] top-[10px] text-lg font-bold text-black"
           onClick={() => props.setTrigger(false)}

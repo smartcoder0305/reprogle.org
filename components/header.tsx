@@ -9,7 +9,7 @@ function Header({ ...props }) {
         </h3>
         <h1
           className={
-            "my-4 font-heading text-5xl font-extrabold leading-none text-white md:whitespace-normal md:text-6xl lg:whitespace-nowrap lg:text-7xl"
+            "my-4 font-heading text-5xl font-extrabold leading-none text-white md:whitespace-normal md:text-6xl lg:whitespace-nowrap xl:text-7xl"
           }
         >
           {{ ...props }.maintext}

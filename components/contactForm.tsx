@@ -1,50 +1,81 @@
 import { useState } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
-import secrets from "../secure/secrets.json";
+import { Turnstile } from "@marsidev/react-turnstile";
 
 export default function ContactForm() {
+  // Form states
   const [fname, setFName] = useState("John");
   const [lname, setLName] = useState("Doe");
   const [email, setEmail] = useState("john.doe@email.com");
   const [message, setMessage] = useState("I was hoping to inquire about...");
-  const [token, setToken] = useState();
+
+  // State for Cloudflare Turnstile
+  const [turnstile, setTurnstile] = useState("error");
+
+  // Form button CSS states
   const [confirm, setConfirm] = useState("hidden");
   const [button, setButton] = useState(
     "text_gradient mt-2 cursor-pointer rounded-md py-2 font-extrabold"
   );
 
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    if (!token) {
-      alert("reCAPTCHA verification failed. Please try again");
-    } else {
-      // This will create a webhook to send to Discord. I was going to do email but webhooks were way easier
-      const contents = {
-        content: "A new form has been submitted from reprogle.org",
-        embeds: [
-          {
-            type: "rich",
-            color: 0x0d1260,
-            title: `From ${fname} ${lname}`,
-            description: message,
-            footer: {
-              text: `Reply to ${email}`,
-            },
-          },
-        ],
-      };
+  async function verifyToken(token: string) {
+    // Send the request to our own api endpoint for verification
+    const result = await fetch("/api/verify-turnstile", {
+      body: JSON.stringify({ token }),
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+    });
 
-      fetch(secrets.webhook, {
-        method: "POST",
-        body: JSON.stringify(contents),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      setConfirm("");
-      setButton("hidden");
+    const outcome = await result.json();
+    if (outcome.success) {
+      setTurnstile(token);
+    } else {
+      setTurnstile("error");
     }
-  };
+  }
+
+  function handleSubmit(event: React.FormEvent) {
+    event.preventDefault();
+
+    switch (turnstile) {
+      case "error": {
+        alert("Turnstile verification error. Please refresh and try again");
+        break;
+      }
+      case "expired": {
+        alert("Turnstile verification expired. Please refresh and try again");
+        break;
+      }
+      default: {
+        // This will create a webhook to send to Discord. I was going to do email but webhooks were way easier
+        const contents = {
+          content: "A new form has been submitted from reprogle.org",
+          embeds: [
+            {
+              type: "rich",
+              color: 0x0d1260,
+              title: `From ${fname} ${lname}`,
+              description: message,
+              footer: {
+                text: `Reply to ${email}`,
+              },
+            },
+          ],
+        };
+
+        fetch(`${process.env.NEXT_PUBLIC_WEBHOOK}`, {
+          method: "POST",
+          body: JSON.stringify(contents),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        setConfirm("");
+        setButton("hidden");
+      }
+    }
+  }
 
   return (
     <div className={"mb-7 block text-white md:flex md:justify-between"}>
@@ -118,10 +149,14 @@ export default function ContactForm() {
             required
           ></textarea>
         </div>
-        <ReCAPTCHA
-          sitekey={secrets.captchaKey}
-          onChange={setToken}
-          theme="dark"
+        <Turnstile
+          siteKey={`${process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}`}
+          // onSuccess passes the captured token to the verify function, where it verifies the token against cloudflare's
+          // servers using the verify-turnstile api endpoint.
+          onSuccess={(token) => verifyToken(token)}
+          onError={() => setTurnstile("error")}
+          onExpire={() => setTurnstile("expired")}
+          options={{ theme: "dark" }}
         />
         <button type="submit" value="Submit" className={button}>
           SUBMIT
