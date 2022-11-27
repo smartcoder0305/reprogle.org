@@ -68,7 +68,7 @@ function Keys({ ...props }) {
             iS0zAwt8VrcYXRKpniNk/o8Wl5ac4b4A/1iZfIuzelWbO2W1ehd0vqMQ1fmdGlq7
             <br className={"hidden md:block"} />
             8fW3L6xyXysA =Daxa
-            <br className={"hidden md:block"} />
+            <br />
             -----END PGP PUBLIC KEY BLOCK-----
           </code>
         </div>
@@ -82,7 +82,9 @@ function Keys({ ...props }) {
           </a>
           :
         </p>
-        <div className={"w-fit rounded-[0.25rem] bg-slate-800 py-2 px-4"}>
+        <div
+          className={"w-fit break-all rounded-[0.25rem] bg-slate-800 py-2 px-4"}
+        >
           <code>
             curl https://reprogle.org/natereprogle_pgp.gpg | gpg --import
           </code>
@@ -96,7 +98,7 @@ function Keys({ ...props }) {
         </p>
         <div
           className={
-            "w-full break-words rounded-[0.25rem] bg-slate-800 py-2 px-4 md:w-fit"
+            "w-full break-all rounded-[0.25rem] bg-slate-800 py-2 px-4 md:w-fit"
           }
         >
           <code>
@@ -107,7 +109,7 @@ function Keys({ ...props }) {
         </div>
         <p>
           It has a fingerprint of{" "}
-          <code className={"break-words rounded-sm bg-slate-800 p-[2px]"}>
+          <code className={"break-all rounded-sm bg-slate-800 p-[2px]"}>
             SHA256:+Anww30dTyHENrG1+bkuJcZlhvIGGl+7j1x2VmUfdsg
           </code>
           .
@@ -124,7 +126,11 @@ function Keys({ ...props }) {
             </a>
             :
           </p>
-          <code className={"w-fit rounded-[0.25rem] bg-slate-800 py-2 px-4"}>
+          <code
+            className={
+              "w-fit break-all rounded-[0.25rem] bg-slate-800 py-2 px-4"
+            }
+          >
             curl https://reprogle.org/natereprogle_ssh.pub &gt;&gt;
             ~/.ssh/authorized_keys
           </code>
@@ -150,7 +156,7 @@ function Keys({ ...props }) {
           <div className={"flex flex-col space-y-2"}>
             <div
               className={
-                "w-full break-words rounded-[0.25rem] bg-slate-800 py-2 px-4 lg:w-[80%]"
+                "w-full break-all rounded-[0.25rem] bg-slate-800 py-2 px-4 lg:w-[80%]"
               }
             >
               <code className={"break-all"}>
@@ -160,7 +166,7 @@ function Keys({ ...props }) {
             </div>
             <p className={"pb-4"}>
               It has a fingerprint of{" "}
-              <code className={"break-words rounded-sm bg-slate-800 p-[2px]"}>
+              <code className={"break-all rounded-sm bg-slate-800 p-[2px]"}>
                 MD5:96:46:4b:a8:eb:0b:90:f3:f5:a7:8c:b2:3c:d3:d3:ba
               </code>
               .
@@ -177,7 +183,9 @@ function Keys({ ...props }) {
                 :
               </p>
               <code
-                className={"w-fit rounded-[0.25rem] bg-slate-800 py-2 px-4"}
+                className={
+                  "w-fit break-all rounded-[0.25rem] bg-slate-800 py-2 px-4"
+                }
               >
                 curl https://reprogle.org/natereprogle_rsa.pub &gt;&gt;
                 ~/.ssh/authorized_keys

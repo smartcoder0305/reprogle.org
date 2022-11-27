@@ -44,6 +44,7 @@ const KeyPage: NextPage = () => {
           "my-10 space-x-36 px-5 md:mx-auto md:flex md:max-w-screen-md md:justify-between md:space-x-20 lg:max-w-screen-lg xl:max-w-screen-xl"
         }
         maintext="PGP & SSH Keys"
+        footertext="For use with GitHub and secure messaging"
         image="/Keys.jpg"
         imagealt="Stock photo of lock with binary surrounding it"
       />
