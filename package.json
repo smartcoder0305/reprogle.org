@@ -11,7 +11,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.4",
     "@headlessui/tailwindcss": "^0.1.1",
-    "@marsidev/react-turnstile": "^0.0.4",
+    "@marsidev/react-turnstile": "^0.0.5",
     "next": "^13.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
