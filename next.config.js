@@ -1,16 +1,16 @@
 /** @type {import('next').NextConfig} */
 
 const ContentSecurityPolicy = `
-default-src 'self' reprogle.org *.reprogle.org;
-font-src *;
-child-src 'self';
-frame-src 'self';
+  default-src 'self' reprogle.org *.reprogle.org;
+  font-src *;
+  child-src 'self';
+  frame-src 'self';
 `;
 
 const securityHeaders = [
   {
     key: "Permissions-Policy",
-    value: "none",
+    value: "",
   },
   {
     key: "Content-Security-Policy",
@@ -23,6 +23,10 @@ const securityHeaders = [
   {
     key: "Referrer-Policy",
     value: "strict-origin-when-cross-origin",
+  },
+  {
+    key: "X-Content-Type-Options",
+    value: "nosniff",
   },
 ];
 
