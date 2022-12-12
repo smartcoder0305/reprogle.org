@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 
+// I plan on fixing the script-src * thing later. I'm not a fan, but it's screwing with GTM...
 const ContentSecurityPolicy = `
   default-src 'self' reprogle.org *.reprogle.org;
   font-src *;
   child-src 'self';
-  frame-src 'self';
-  script-src 'self' 'unsafe-inline' static.cloudflareinsights.com *.google-analytics.com google-analytics.com *.cloudflare.com googletagmanager.com;
+  frame-src 'self' *.cloudflare.com;
+  script-src *;
   style-src-elem 'self' *.googleapis.com;
   connect-src 'self' vitals.vercel-insights.com *.google-analytics.com google-analytics.com;
 `;
