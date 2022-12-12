@@ -5,6 +5,9 @@ const ContentSecurityPolicy = `
   font-src *;
   child-src 'self';
   frame-src 'self';
+  script-src: 'self' 'unsafe-inline' static.cloudflareinsights.com google-analytics.com;
+  style-src-elem: 'self' fonts.googleapis.com;
+  connect-src: 'self' vitals.vercel-insights.com;
 `;
 
 const securityHeaders = [
