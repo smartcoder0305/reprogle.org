@@ -6,7 +6,7 @@ const ContentSecurityPolicy = `
   font-src *;
   child-src 'self';
   frame-src 'self' *.cloudflare.com;
-  script-src *;
+  script-src * 'unsafe-inline';
   style-src-elem 'self' *.googleapis.com;
   connect-src 'self' vitals.vercel-insights.com *.google-analytics.com google-analytics.com;
 `;
