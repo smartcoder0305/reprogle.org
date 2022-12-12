@@ -10,7 +10,8 @@ const ContentSecurityPolicy = `
 const securityHeaders = [
   {
     key: "Permissions-Policy",
-    value: "",
+    value:
+      "picture-in-picture=(self), camera=(), microphone=(), geolocation=(), browsing-topics=()",
   },
   {
     key: "Content-Security-Policy",
