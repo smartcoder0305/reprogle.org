@@ -10,5 +10,11 @@
         "pageTitle": "contact",
         "description": "A page for contacting the site author",
         "slug": "/contact"
+    },
+    {
+        "id": 3,
+        "pageTitle": "keys",
+        "description": "Public SSH and PGP keys generated for the site author",
+        "slug": "/keys"
     }
 ]
