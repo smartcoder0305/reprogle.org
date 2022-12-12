@@ -5,9 +5,9 @@ const ContentSecurityPolicy = `
   font-src *;
   child-src 'self';
   frame-src 'self';
-  script-src 'self' 'unsafe-inline' static.cloudflareinsights.com *.google-analytics.com google-analytics.com;
+  script-src 'self' 'unsafe-inline' static.cloudflareinsights.com *.google-analytics.com google-analytics.com *.cloudflare.com googletagmanager.com;
   style-src-elem 'self' *.googleapis.com;
-  connect-src 'self' vitals.vercel-insights.com;
+  connect-src 'self' vitals.vercel-insights.com *.google-analytics.com google-analytics.com;
 `;
 
 const securityHeaders = [
