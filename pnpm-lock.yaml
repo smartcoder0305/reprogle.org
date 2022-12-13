@@ -5,7 +5,7 @@ specifiers:
   '@headlessui/tailwindcss': ^0.1.2
   '@marsidev/react-turnstile': ^0.0.5
   '@types/node': 18.11.14
-  '@types/react': 18.0.21
+  '@types/react': 18.0.26
   '@types/react-dom': 18.0.9
   '@types/react-gtm-module': 2.0.1
   autoprefixer: ^10.4.13
@@ -37,7 +37,7 @@ dependencies:
 
 devDependencies:
   '@types/node': 18.11.14
-  '@types/react': 18.0.21
+  '@types/react': 18.0.26
   '@types/react-dom': 18.0.9
   '@types/react-gtm-module': 2.0.1
   autoprefixer: 10.4.13_postcss@8.4.20
@@ -317,15 +317,15 @@ packages:
   /@types/react-dom/18.0.9:
     resolution: {integrity: sha512-qnVvHxASt/H7i+XG1U1xMiY5t+IHcPGUK7TDMDzom08xa7e86eCeKOiLZezwCKVxJn6NEiiy2ekgX8aQssjIKg==}
     dependencies:
-      '@types/react': 18.0.21
+      '@types/react': 18.0.26
     dev: true
 
   /@types/react-gtm-module/2.0.1:
     resolution: {integrity: sha512-T/DN9gAbCYk5wJ1nxf4pSwmXz4d1iVjM++OoG+mwMfz9STMAotGjSb65gJHOS5bPvl6vLSsJnuC+y/43OQrltg==}
     dev: true
 
-  /@types/react/18.0.21:
-    resolution: {integrity: sha512-7QUCOxvFgnD5Jk8ZKlUAhVcRj7GuJRjnjjiY/IUBWKgOlnvDvTMLD4RTF7NPyVmbRhNrbomZiOepg7M/2Kj1mA==}
+  /@types/react/18.0.26:
+    resolution: {integrity: sha512-hCR3PJQsAIXyxhTNSiDFY//LhnMZWpNNr5etoCqx/iUfGc5gXWtQR2Phl908jVR6uPXacojQWTg4qRpkxTuGug==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
