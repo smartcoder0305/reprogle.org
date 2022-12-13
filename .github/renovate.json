@@ -22,5 +22,6 @@
       "automerge": true
     }
   ],
-  "platformCommit": true
+  "platformCommit": true,
+  "dependencyDashboardAutoclose": true,
 }
