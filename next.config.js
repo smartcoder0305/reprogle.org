@@ -6,8 +6,8 @@ const ContentSecurityPolicy = `
   font-src *;
   child-src 'self';
   frame-src 'self' *.cloudflare.com;
-  script-src * 'unsafe-inline';
-  style-src-elem 'self' *.googleapis.com;
+  script-src * 'unsafe-inline' 'unsafe-eval';
+  style-src 'self' 'unsafe-inline' *.googleapis.com;
   connect-src 'self' vitals.vercel-insights.com *.google-analytics.com google-analytics.com discord.com;
 `;
 
@@ -35,6 +35,9 @@ const securityHeaders = [
 ];
 
 module.exports = {
+  experimental: {
+    appDir: true,
+  },
   async headers() {
     return [
       {

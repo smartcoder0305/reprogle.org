@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-function Popup({ ...props }) {
+export default function Popup({ ...props }) {
   const router = useRouter();
   const [timeLeft, setTimeLeft] = useState(props.redirectTime);
 
@@ -73,5 +73,3 @@ function Popup({ ...props }) {
     </div>
   );
 }
-
-export default Popup;
