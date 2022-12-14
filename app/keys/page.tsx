@@ -1,8 +1,7 @@
-import type { NextPage } from "next";
 import Header from "../../components/header";
 import Keys from "../../components/keys";
 
-const KeyPage: NextPage = () => {
+export default function KeyPage() {
   return (
     <div className={"relative overflow-hidden"}>
       <Header
@@ -22,5 +21,3 @@ const KeyPage: NextPage = () => {
     </div>
   );
 };
-
-export default KeyPage;

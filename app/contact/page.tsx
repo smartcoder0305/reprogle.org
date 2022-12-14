@@ -1,8 +1,7 @@
-import type { NextPage } from "next";
 import ContactForm from "../../components/contactForm";
 import Header from "../../components/header";
 
-const Contact: NextPage = () => {
+export default function Contact() {
   return (
     <div className={"relative overflow-hidden"}>
       <Header
@@ -42,5 +41,3 @@ const Contact: NextPage = () => {
     </div>
   );
 };
-
-export default Contact;

@@ -1,8 +1,7 @@
-import type { NextPage } from "next";
 import Header from "../components/header";
 import Body from "../components/body";
 
-const Home: NextPage = () => {
+export default function Home() {
   return (
     <div className={"relative overflow-hidden"}>
       <Header
@@ -23,5 +22,3 @@ const Home: NextPage = () => {
     </div>
   );
 };
-
-export default Home;
