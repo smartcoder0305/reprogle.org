@@ -1,9 +1,10 @@
+'use client';
 import Link from "next/link";
 import Popup from "./popup";
 import { useState } from "react";
 import { Transition } from "@headlessui/react";
 
-function Footer({ ...props }) {
+export default function Footer({ ...props }) {
   const [instagram, setInstagram] = useState(false);
   const [twitter, setTwitter] = useState(false);
 
@@ -95,5 +96,3 @@ function Footer({ ...props }) {
     </div>
   );
 }
-
-export default Footer;

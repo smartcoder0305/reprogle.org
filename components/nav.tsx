@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import styles from "../styles/nav.module.css";
 import { useEffect, useState } from "react";
@@ -18,7 +19,7 @@ function useWindowSize() {
   return size;
 }
 
-function Nav() {
+export default function Nav() {
   // A couple state objects for handling the mobile menu
   const [menu, setMenu] = useState(false);
   const [width] = useWindowSize();
@@ -172,5 +173,3 @@ function Nav() {
     </nav>
   );
 }
-
-export default Nav;

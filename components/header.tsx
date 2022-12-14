@@ -1,4 +1,5 @@
-function Header({ ...props }) {
+'use client';
+export default function Header({ ...props }) {
   return (
     <div {...props}>
       <div className="flex flex-col items-start justify-center">
@@ -31,5 +32,3 @@ function Header({ ...props }) {
     </div>
   );
 }
-
-export default Header;

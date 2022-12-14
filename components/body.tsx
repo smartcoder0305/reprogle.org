@@ -1,3 +1,5 @@
+'use client';
+
 import ResumeItem from "./resumeItem";
 
 type Job = {
@@ -7,7 +9,7 @@ type Job = {
   description: string;
 };
 
-function Body({ ...props }) {
+export default function Body({ ...props }) {
   return (
     <div {...props}>
       {/* About me */}
@@ -134,5 +136,3 @@ function Body({ ...props }) {
     </div>
   );
 }
-
-export default Body;

@@ -1,4 +1,4 @@
-function ResumeItem({ ...props }) {
+export default function ResumeItem({ ...props }) {
   return (
     <div className={"mb-7 block lg:flex lg:justify-between lg:space-x-5"}>
       <div className={"flex flex-col lg:w-1/3 lg:space-y-2"}>
@@ -14,5 +14,3 @@ function ResumeItem({ ...props }) {
     </div>
   );
 }
-
-export default ResumeItem;

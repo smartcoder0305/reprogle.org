@@ -1,4 +1,4 @@
-// components/layout.js
+'use client';
 
 import Nav from "./nav";
 import Footer from "./footer";
