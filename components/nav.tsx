@@ -154,18 +154,21 @@ export default function Nav() {
         <Link
           href="/"
           className="block cursor-pointer bg-white px-10 py-3 outline outline-1 outline-dark-base-blue-100"
+          onClick={() => setMenu(false)}
         >
           About
         </Link>
         <Link
           href="/contact"
           className="block cursor-pointer bg-white px-10 py-3 outline outline-1 outline-dark-base-blue-100"
+          onClick={() => setMenu(false)}
         >
           Contact Me
         </Link>
         <Link
           href="/keys"
           className="block cursor-pointer bg-white px-10 py-3 outline outline-1 outline-dark-base-blue-100"
+          onClick={() => setMenu(false)}
         >
           Keys
         </Link>
