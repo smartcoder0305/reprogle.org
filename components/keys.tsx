@@ -140,9 +140,8 @@ export default function Keys({ ...props }) {
       <div className={"flex flex-col space-y-2"}>
         <h3 className={"text-md mt-2 md:text-lg"}>RSA Key</h3>
         <p>
-          I also have an RSA Key I use for my private servers and services,
-          however it has been used on GitHub on occasion, so it may be good to
-          have it here just in case!
+          I also have an old RSA Key I used to use for private servers and services,
+          It may be good to have it here just in case!
         </p>
         <br />
         <div
