@@ -3,6 +3,7 @@ export default function Head() {
     <>
       <title>Contact - Nate Reprogle</title>
       <link rel="canonical" href="https://reprogle.org/contact" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta property="og:locale" content="en_US" />
       <meta property="og:type" content="article" />
       <meta property="og:title" content="Contact - Nate Reprogle" />

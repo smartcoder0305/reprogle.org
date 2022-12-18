@@ -6,7 +6,7 @@ export default function Head() {
       content="Public SSH & PGP Keys used by Nate Reprogle"
     />
     <link rel="canonical" href="https://reprogle.org/keys" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Home - Nate Reprogle" />
