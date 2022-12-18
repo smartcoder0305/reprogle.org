@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { useState } from "react";
 
 export default function Keys({ ...props }) {
@@ -149,9 +149,22 @@ export default function Keys({ ...props }) {
           className="flex w-fit cursor-pointer py-2 pr-4 lg:py-0"
           onClick={() => setExpand((expand) => !expand)}
         >
-          {expand ? shrinkArrow : expandArrow}
-
-          <span className={"pl-1"}>Click to expand</span>
+          {/* Show a differnet arrow and text based off the state of setExpand */}
+          {expand ? (
+            <>
+              {shrinkArrow}
+              <span className={"pl-1"}>
+                Click to collapse
+              </span>
+            </>
+          ) : (
+            <>
+              {expandArrow}
+              <span className={"pl-1"}>
+                Click to expand
+              </span>
+            </>
+          )}
         </div>
         {expand && (
           <div className={"flex flex-col space-y-2"}>
