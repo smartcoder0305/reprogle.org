@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import Link from "next/link";
 import Popup from "./popup";
 import { useState } from "react";
@@ -29,7 +29,6 @@ export default function Footer({ ...props }) {
           <h3 className={"mb-3 font-heading text-xl md:mb-6"}>Socials</h3>
           <ul className={"space-y-2 text-sm"}>
             <li>
-              {/* <Link href="https://twitter.com/natereprogle">Twitter</Link> */}
               <button
                 onClick={() => {
                   setTwitter(true);
@@ -49,7 +48,7 @@ export default function Footer({ ...props }) {
                 <Popup
                   trigger={twitter}
                   message={
-                    "Please note that personal social media sites reflect opinions or beliefs from the site author, and do not necessarily reflect the beliefs of their current or previous employers. Social media profiles will always adhere to my employers' Code of Ethical and Professional Standards, Non-Discrimination Policy, and Employee Confidentiality Agreement."
+                    "Please note that personal social media sites reflect opinions or beliefs from me, and do not necessarily reflect the beliefs of my current or previous employers. Social media profiles will always adhere to my employers' Code of Ethical and Professional Standards, Non-Discrimination Policy, and Employee Confidentiality Agreement."
                   }
                   setTrigger={setTwitter}
                   redirectTitle={"Twitter"}
@@ -77,7 +76,7 @@ export default function Footer({ ...props }) {
                 <Popup
                   trigger={instagram}
                   message={
-                    "Please note that personal social media sites reflect opinions or beliefs from the site author, and do not necessarily reflect the beliefs of their current or previous employers. Social media profiles will always adhere to my employers' Code of Ethical and Professional Standards, Non-Discrimination Policy, and Employee Confidentiality Agreement."
+                    "Please note that personal social media sites reflect opinions or beliefs from me, and do not necessarily reflect the beliefs of my current or previous employers. Social media profiles will always adhere to my employers' Code of Ethical and Professional Standards, Non-Discrimination Policy, and Employee Confidentiality Agreement."
                   }
                   setTrigger={setInstagram}
                   redirectTitle={"Instagram"}
@@ -86,13 +85,25 @@ export default function Footer({ ...props }) {
                 />
               </Transition>
             </li>
+            <li>
+              <Link href="https://www.github.com/TerrrorByte">GitHub</Link>
+            </li>
           </ul>
         </div>
       </div>
       {/* Copyright */}
-      <h2 className={"self-center text-xs"}>
-        Copyright © 2022-{new Date().getFullYear()} | Nate Reprogle
-      </h2>
+      <div className="flex flex-col items-center justify-center text-xs">
+        <h2>Copyright © 2022-{new Date().getFullYear()} | Nate Reprogle</h2>
+        <p>
+          Site source:{" "}
+          <Link
+            href="https://www.github.com/TerrrorByte/reprogle.org"
+            className="hover:underline"
+          >
+            click here
+          </Link>
+        </p>
+      </div>
     </div>
   );
 }
