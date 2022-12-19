@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { useState } from "react";
 
 export default function Keys({ ...props }) {
@@ -140,18 +140,30 @@ export default function Keys({ ...props }) {
       <div className={"flex flex-col space-y-2"}>
         <h3 className={"text-md mt-2 md:text-lg"}>RSA Key</h3>
         <p>
-          I also have an RSA Key I use for my private servers and services,
-          however it has been used on GitHub on occasion, so it may be good to
-          have it here just in case!
+          I also have an old RSA Key I used to use for private servers and services,
+          It may be good to have it here just in case!
         </p>
         <br />
         <div
           className="flex w-fit cursor-pointer py-2 pr-4 lg:py-0"
           onClick={() => setExpand((expand) => !expand)}
         >
-          {expand ? shrinkArrow : expandArrow}
-
-          <span className={"pl-1"}>Click to expand</span>
+          {/* Show a differnet arrow and text based off the state of setExpand */}
+          {expand ? (
+            <>
+              {shrinkArrow}
+              <span className={"pl-1"}>
+                Click to collapse
+              </span>
+            </>
+          ) : (
+            <>
+              {expandArrow}
+              <span className={"pl-1"}>
+                Click to expand
+              </span>
+            </>
+          )}
         </div>
         {expand && (
           <div className={"flex flex-col space-y-2"}>
