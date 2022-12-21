@@ -8,7 +8,7 @@ const ContentSecurityPolicy = `
   frame-src 'self' *.cloudflare.com;
   script-src * 'unsafe-inline' 'unsafe-eval';
   style-src 'self' 'unsafe-inline' *.googleapis.com;
-  connect-src 'self' vitals.vercel-insights.com *.google-analytics.com google-analytics.com discord.com;
+  connect-src 'self' vitals.vercel-insights.com *.google-analytics.com google-analytics.com discord.com *.instagram.com *.twitter.com *.linkedin.com;
 `;
 
 const securityHeaders = [
@@ -45,6 +45,18 @@ module.exports = {
         headers: securityHeaders,
       },
     ];
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/twitter',
+        destination: 'https://www.twitter.com/natereprogle'
+      },
+      {
+        source: '/instagram',
+        destination: 'https://www.instagram.com/natereprogle/'
+      },
+    ]
   },
   reactStrictMode: true,
   swcMinify: true,

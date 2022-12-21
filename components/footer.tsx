@@ -52,7 +52,7 @@ export default function Footer({ ...props }) {
                   }
                   setTrigger={setTwitter}
                   redirectTitle={"Twitter"}
-                  redirectLink={"https://twitter.com/natereprogle"}
+                  redirectLink={"https://www.twitter.com/natereprogle"}
                   redirectTime={7}
                 />
               </Transition>
@@ -80,7 +80,7 @@ export default function Footer({ ...props }) {
                   }
                   setTrigger={setInstagram}
                   redirectTitle={"Instagram"}
-                  redirectLink={"https://www.instagram.com/natereprogle/"}
+                  redirectLink={"https://www.instagram.com/natereprogle"}
                   redirectTime={7}
                 />
               </Transition>
