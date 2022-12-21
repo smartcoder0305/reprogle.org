@@ -1,15 +1,15 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 
 export default function Popup({ ...props }) {
-  const router = useRouter();
   const [timeLeft, setTimeLeft] = useState(props.redirectTime);
 
   useEffect(() => {
     if (timeLeft === 0) {
-      router.push(props.redirectLink);
+      // I don't like this, but it's the only way I was able to fix CORS issues with my app. For whatever reason, Twitter and Instagram wouldn't
+      // accept router.push or router.replace
+      window.location.replace(props.redirectLink);
     }
 
     const intervalUpdate = setInterval(() => {
@@ -17,7 +17,7 @@ export default function Popup({ ...props }) {
     }, 1000);
 
     return () => clearTimeout(intervalUpdate);
-  }, [props.redirectLink, router, timeLeft]);
+  }, [props.redirectLink, timeLeft]);
 
   return (
     <div
