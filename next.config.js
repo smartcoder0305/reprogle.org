@@ -46,6 +46,19 @@ module.exports = {
       },
     ];
   },
+  async rewrites() {
+    return [
+      {
+        source: '/twitter',
+        destination: 'https://www.twitter.com/natereprogle'
+      },
+      {
+        source: '/instagram',
+        destination: 'https://www.instagram.com/natereprogle/'
+      },
+    ]
+  }
+  },
   reactStrictMode: true,
   swcMinify: true,
 };
