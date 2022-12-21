@@ -9,7 +9,7 @@ export default function Popup({ ...props }) {
 
   useEffect(() => {
     if (timeLeft === 0) {
-      router.push(props.redirectLink);
+      router.prefetch(props.redirectLink).push();
     }
 
     const intervalUpdate = setInterval(() => {
