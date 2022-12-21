@@ -57,7 +57,6 @@ module.exports = {
         destination: 'https://www.instagram.com/natereprogle/'
       },
     ]
-  }
   },
   reactStrictMode: true,
   swcMinify: true,
