@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@headlessui/react': ^1.7.7
   '@headlessui/tailwindcss': ^0.1.2
-  '@marsidev/react-turnstile': ^0.0.6
+  '@marsidev/react-turnstile': ^0.0.7
   '@types/node': 18.11.17
   '@types/react': 18.0.27
   '@types/react-dom': 18.0.9
@@ -27,7 +27,7 @@ specifiers:
 dependencies:
   '@headlessui/react': 1.7.7_biqbaboplfbrettd7655fr4n2y
   '@headlessui/tailwindcss': 0.1.2_tailwindcss@3.2.4
-  '@marsidev/react-turnstile': 0.0.6_biqbaboplfbrettd7655fr4n2y
+  '@marsidev/react-turnstile': 0.0.7_biqbaboplfbrettd7655fr4n2y
   next: 13.1.4_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -117,8 +117,8 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
-  /@marsidev/react-turnstile/0.0.6_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-p526QbNHLiTbYQypzenXYQjezqHBfCiFp1BPI8zHmiDj5Ar8yCONyxRSQE9FLZ/9aGKhDu4NkExWOaf64D5dLg==}
+  /@marsidev/react-turnstile/0.0.7_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-BWXZ6/ddE96cP/U3jkLO8wbJi6qOpE4wH67h6EkD57TRy4RSauBBYKRZkuUEpfgm2wdWoPukPz4LfnoV5KJGrQ==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
