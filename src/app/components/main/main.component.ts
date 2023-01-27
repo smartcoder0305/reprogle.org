@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-main',
@@ -6,9 +6,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./main.component.css'],
 })
 export class MainComponent {
-  @Input() headerText = 'Hello, my name is';
-  @Input() mainText = 'Nate Reprogle';
-  @Input() footerText = 'IT Enthusiast';
-  @Input() image = '/assets/Profile.jpg';
-  @Input() imageAlt = 'Nate Reprogle';
+  headerText: string = 'Hello, my name is';
+  mainText: string = 'Nate Reprogle';
+  footerText: string = 'IT Enthusiast';
+  image: string = '/assets/Profile.jpg';
+  imageAlt: string = 'Nate Reprogle';
 }
