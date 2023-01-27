@@ -12,10 +12,10 @@
     <h3 class="mb-3 font-heading text-xl md:mb-6">Socials</h3>
     <ul class="space-y-2 text-sm">
       <li>
-        <button (click)="setTwitter(true)">
+        <button (click)="setPopUp(true)">
           Twitter
         </button>
-        <app-popup trigger={twitter} message="Please note that personal social media sites reflect opinions or beliefs from me, and do not necessarily reflect the beliefs of my current or previous employers. Social media profiles will always adhere to my employers' Code of Ethical and Professional Standards, Non-Discrimination Policy, and Employee Confidentiality Agreement." setTrigger={setTwitter} redirectTitle="Twitter" redirectLink="https://www.twitter.com/natereprogle" redirectTime={7} />
+        <app-popup [@fade]="this.popUp.popUpOpen  ? 'active' : 'inactive'" *ngIf="this.popUp.popUpOpen" message="Please note that personal social media sites reflect opinions or beliefs from me, and do not necessarily reflect the beliefs of my current or previous employers. Social media profiles will always adhere to my employers' Code of Ethical and Professional Standards, Non-Discrimination Policy, and Employee Confidentiality Agreement." redirectTitle="Twitter" redirectLink="https://www.twitter.com/natereprogle" [redirectTime]=7 />
       </li>
       <li>
         <a href="https://www.linkedin.com/in/natereprogle/">
@@ -23,8 +23,8 @@
         </a>
       </li>
       <li>
-        <button (click)="setInstagram(true)">Instagram</button>
-        <app-popup trigger={instagram} message="Please note that personal social media sites reflect opinions or beliefs from me, and do not necessarily reflect the beliefs of my current or previous employers. Social media profiles will always adhere to my employers' Code of Ethical and Professional Standards, Non-Discrimination Policy, and Employee Confidentiality Agreement." setTrigger={setInstagram} redirectTitle="Instagram" redirectLink="https://www.instagram.com/natereprogle" redirectTime={7} />
+        <button (click)="setPopUp(true)">Instagram</button>
+        <app-popup [@fade]="this.popUp.popUpOpen  ? 'active' : 'false'" *ngIf="this.popUp.popUpOpen" message="Please note that personal social media sites reflect opinions or beliefs from me, and do not necessarily reflect the beliefs of my current or previous employers. Social media profiles will always adhere to my employers' Code of Ethical and Professional Standards, Non-Discrimination Policy, and Employee Confidentiality Agreement." redirectTitle="Instagram" redirectLink="https://www.instagram.com/natereprogle" [redirectTime]=7 />
       </li>
       <li>
         <a href="https://www.github.com/TerrrorByte">GitHub</a>

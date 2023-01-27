@@ -51,5 +51,7 @@ export class AppComponent {
     ]);
 
     linkInjector.createLink('canonical', 'https://reprogle.org');
+    linkInjector.createLink('preconnect', 'https://fonts.google.com');
+    linkInjector.createLink('preconnect', 'https://fonts.gstatic.com', true);
   }
 }

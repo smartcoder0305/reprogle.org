@@ -7,10 +7,11 @@ import { DOCUMENT } from '@angular/common';
 export class LinkInjectorService {
   constructor(@Inject(DOCUMENT) private doc: Document) {}
 
-  createLink(rel: string, hrefString: string) {
+  createLink(rel: string, hrefString: string, crossOrigin?: boolean) {
     let link: HTMLLinkElement = this.doc.createElement('link');
     link.setAttribute('rel', rel);
     link.setAttribute('href', hrefString);
+    crossOrigin ? link.setAttribute('crossorigin', '') : null;
     this.doc.head.appendChild(link);
   }
 

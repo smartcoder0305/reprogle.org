@@ -1,1 +1,5 @@
-<p>contact works!</p>
+<ngx-turnstile
+  [siteKey]="environment.PUBLIC_TURNSTILE_SITE_KEY"
+  (resolved)="resolveKey($event)"
+  theme="dark"
+></ngx-turnstile>

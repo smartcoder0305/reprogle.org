@@ -14,12 +14,14 @@ specifiers:
   '@angular/router': ^15.1.0
   '@types/jasmine': ~4.3.0
   autoprefixer: ^10.4.13
+  dotenv: ^16.0.3
   jasmine-core: ~4.5.0
   karma: ~6.4.0
   karma-chrome-launcher: ~3.1.0
   karma-coverage: ~2.2.0
   karma-jasmine: ~5.1.0
   karma-jasmine-html-reporter: ~2.0.0
+  ngx-turnstile: ^0.0.6
   postcss: ^8.4.21
   rxjs: ~7.8.0
   tailwindcss: ^3.2.4
@@ -36,6 +38,8 @@ dependencies:
   '@angular/platform-browser': 15.1.2_d5cqipbc22ng45bbz7rblks63q
   '@angular/platform-browser-dynamic': 15.1.2_nvxdb5l45salvpcyi4ujzyiawy
   '@angular/router': 15.1.2_2e65tvtyrwy7yijl6ersdz3qky
+  dotenv: 16.0.3
+  ngx-turnstile: 0.0.6_uv6uyeurdrzrhsp6bgc27pnjdu
   rxjs: 7.8.0
   tslib: 2.5.0
   zone.js: 0.12.0
@@ -3249,6 +3253,11 @@ packages:
       domhandler: 4.3.1
     dev: true
 
+  /dotenv/16.0.3:
+    resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
+    engines: {node: '>=12'}
+    dev: false
+
   /ee-first/1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
     dev: true
@@ -4848,6 +4857,17 @@ packages:
   /neo-async/2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
     dev: true
+
+  /ngx-turnstile/0.0.6_uv6uyeurdrzrhsp6bgc27pnjdu:
+    resolution: {integrity: sha512-x+z+hzrnMsRGaETATTBvT0/sGi/k1HcOBLZYe3MWPrEexPpl2xGGDPgvxotjfuBfwXtD4/uXaWd6VZ2Yci4cBg==}
+    peerDependencies:
+      '@angular/common': ^14.2.0
+      '@angular/core': ^14.2.0
+    dependencies:
+      '@angular/common': 15.1.2_77moedl5bs7lqwcv53ddrcqlqi
+      '@angular/core': 15.1.2_rxjs@7.8.0+zone.js@0.12.0
+      tslib: 2.5.0
+    dev: false
 
   /nice-napi/1.0.2:
     resolution: {integrity: sha512-px/KnJAJZf5RuBGcfD+Sp2pAKq0ytz8j+1NehvgIGFkvtvFrDM3T8E4x/JJODXK9WZow8RRGrbA9QQ3hs+pDhA==}
