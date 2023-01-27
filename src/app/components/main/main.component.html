@@ -1,0 +1,21 @@
+<div
+  class="my-10 space-x-36 px-5 md:mx-auto md:flex md:max-w-screen-md md:justify-between md:space-x-20 lg:max-w-screen-lg xl:max-w-screen-xl"
+>
+  <div class="flex flex-col items-start justify-center">
+    <h3 class="gradient pb-3 font-body text-base font-normal text-white">
+      {{ headerText }}
+    </h3>
+    <h1
+      class="my-4 font-heading text-5xl font-extrabold leading-none text-white md:whitespace-normal md:text-6xl lg:whitespace-nowrap xl:text-7xl"
+    >
+      {{ mainText }}
+    </h1>
+    <h1 class="font-heading text-xl font-normal text-white md:text-2xl">
+      {{ footerText }}
+    </h1>
+  </div>
+  <picture class="xl:h-[45%] xl:w-[45%]">
+    <source srcset="{{ image }}" type="image/jpg" />
+    <img src="{{ image }}" alt="{{ imageAlt }}" class="rounded-full" />
+  </picture>
+</div>

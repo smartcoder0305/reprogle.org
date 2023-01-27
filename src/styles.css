@@ -7,7 +7,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   --dark-base-blue-100: "#010b1f";
   --dark-base-blue-200: "#021740";
