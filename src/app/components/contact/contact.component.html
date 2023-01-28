@@ -1,5 +1,104 @@
-<ngx-turnstile
-  [siteKey]="environment.PUBLIC_TURNSTILE_SITE_KEY"
-  (resolved)="resolveKey($event)"
-  theme="dark"
-></ngx-turnstile>
+<div class="relative overflow-hidden">
+  <app-header
+    headerText="Feel free to"
+    mainText="Contact Me"
+    footerText=""
+    image="/assets/Contact.jpg"
+    imageAlt="Hands typing on a laptop keyboard"
+  ></app-header>
+  <div
+    class="my-20 px-4 text-white md:mx-auto md:flex md:max-w-screen-md md:justify-between md:px-5 lg:max-w-screen-lg xl:max-w-screen-xl"
+  >
+    <div class="mb-5 flex w-full flex-col space-y-4 md:w-1/2 md:pr-5">
+      <h1 class="font-heading text-2xl text-white md:text-3xl lg:text-4xl">
+        Send Me a Message
+      </h1>
+      <p
+        class="max-w-screen-sm font-body text-sm text-white md:max-w-screen-sm md:text-base lg:max-w-screen-md lg:text-lg xl:max-w-screen-lg"
+      >
+        Whether you wish to just chat or need to reach me, simply fill out this
+        form and I&apos;ll get back to you soon.
+      </p>
+    </div>
+    <div class="mb-7 block text-white md:flex md:justify-between">
+      <form class="flex flex-col items-start" (submit)="handleSubmit($event)">
+        <div>
+          <label htmlFor="name">
+            Name <span class="text-red-300">*</span>
+          </label>
+        </div>
+        <div class="block w-full md:flex md:justify-between md:space-x-5">
+          <div class="mb-5">
+            <input
+              type="text"
+              id="fname"
+              name="fname"
+              class="w-full rounded-sm p-1 text-black"
+              [(ngModel)]="firstName"
+              placeholder="John"
+              required
+            />
+            <br />
+            <label htmlFor="name" class="text-sm"> First </label>
+            <br />
+          </div>
+          <div class="mb-5">
+            <input
+              type="text"
+              id="lname"
+              name="lname"
+              class="w-full rounded-sm p-1 text-black"
+              [(ngModel)]="lastName"
+              placeholder="Doe"
+              required
+            />
+            <br />
+            <label htmlFor="lname" class="text-sm"> Last </label>
+            <br />
+          </div>
+        </div>
+        <div class="mb-7 w-full">
+          <label htmlFor="email">
+            Email <span class="text-red-300">*</span>
+          </label>
+          <br />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="w-full rounded-sm p-1 text-black"
+            [(ngModel)]="email"
+            placeholder="john.doe@email.com"
+            required
+          />
+          <br />
+        </div>
+        <div class="mb-4 w-full">
+          <label htmlFor="message">
+            Message <span class="text-red-300">*</span>
+          </label>
+          <textarea
+            name="message"
+            id="message"
+            class="w-full rounded-sm p-1 text-black"
+            [(ngModel)]="message"
+            rows="6"
+            placeholder="I was hoping to inquire about..."
+            required
+          ></textarea>
+        </div>
+        <ngx-turnstile
+          [siteKey]="environment.turnstileSiteKey"
+          (resolved)="resolveKey($event)"
+          theme="dark"
+        ></ngx-turnstile>
+        <button type="submit" value="Submit" class="{{ button }}">
+          SUBMIT
+        </button>
+        <h1 class="{{ confirm }}">
+          Thanks for your message! I&apos;ll be in touch shortly
+        </h1>
+      </form>
+    </div>
+  </div>
+</div>

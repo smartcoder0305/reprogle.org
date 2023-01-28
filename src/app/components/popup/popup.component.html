@@ -1,6 +1,6 @@
 <div
   class="fixed top-0 left-0 flex min-h-screen w-full items-center justify-center bg-[rgb(0,0,0,0.65)] text-left text-black"
-  (click)="closePopup()"
+  (click)="emitStateChange(false)"
 >
   <div
     class="relative m-[32px] flex max-w-screen-sm flex-col rounded-xl bg-white p-[32px] lg:max-w-screen-md xl:max-w-screen-lg"
@@ -8,7 +8,7 @@
   >
     <button
       class="absolute right-[14px] top-[10px] text-lg font-bold text-black"
-      (click)="closePopup()"
+      (click)="emitStateChange(false)"
     >
       X
     </button>

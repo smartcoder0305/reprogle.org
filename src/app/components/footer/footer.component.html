@@ -1,10 +1,11 @@
 <!-- This is where the main content goes, so we can center the copyright below it -->
 <div class="mb-8 md:flex">
   <div class="mb-5 md:w-2/3">
-    <h3 class="font-heading text-xl">
-      Living in Arkansas, reaching the world
-    </h3>
-    <a href="/contact" class="font-heading text-3xl font-bold underline md:text-4xl xl:text-5xl">
+    <h3 class="font-heading text-xl">Living in Arkansas, reaching the world</h3>
+    <a
+      href="/contact"
+      class="font-heading text-3xl font-bold underline md:text-4xl xl:text-5xl"
+    >
       Get in touch
     </a>
   </div>
@@ -12,19 +13,31 @@
     <h3 class="mb-3 font-heading text-xl md:mb-6">Socials</h3>
     <ul class="space-y-2 text-sm">
       <li>
-        <button (click)="setPopUp(true)">
-          Twitter
-        </button>
-        <app-popup [@fade]="this.popUp.popUpOpen  ? 'active' : 'inactive'" *ngIf="this.popUp.popUpOpen" message="Please note that personal social media sites reflect opinions or beliefs from me, and do not necessarily reflect the beliefs of my current or previous employers. Social media profiles will always adhere to my employers' Code of Ethical and Professional Standards, Non-Discrimination Policy, and Employee Confidentiality Agreement." redirectTitle="Twitter" redirectLink="https://www.twitter.com/natereprogle" [redirectTime]=7 />
+        <button (click)="setPopUp(true, 'twitter')">Twitter</button>
+        <app-popup
+          (stateChange)="setPopUp($event, 'twitter')"
+          [@fade]="this.twitterPopup ? 'active' : 'inactive'"
+          *ngIf="twitterPopup"
+          message="Please note that personal social media sites reflect opinions or beliefs from me, and do not necessarily reflect the beliefs of my current or previous employers. Social media profiles will always adhere to my employers' Code of Ethical and Professional Standards, Non-Discrimination Policy, and Employee Confidentiality Agreement."
+          redirectTitle="Twitter"
+          redirectLink="https://www.twitter.com/natereprogle"
+          [redirectTime]="7"
+        ></app-popup>
       </li>
       <li>
-        <a href="https://www.linkedin.com/in/natereprogle/">
-          LinkedIn
-        </a>
+        <a href="https://www.linkedin.com/in/natereprogle/"> LinkedIn </a>
       </li>
       <li>
-        <button (click)="setPopUp(true)">Instagram</button>
-        <app-popup [@fade]="this.popUp.popUpOpen  ? 'active' : 'false'" *ngIf="this.popUp.popUpOpen" message="Please note that personal social media sites reflect opinions or beliefs from me, and do not necessarily reflect the beliefs of my current or previous employers. Social media profiles will always adhere to my employers' Code of Ethical and Professional Standards, Non-Discrimination Policy, and Employee Confidentiality Agreement." redirectTitle="Instagram" redirectLink="https://www.instagram.com/natereprogle" [redirectTime]=7 />
+        <button (click)="setPopUp(true, 'instagram')">Instagram</button>
+        <app-popup
+          (stateChange)="setPopUp($event, 'instagram')"
+          [@fade]="this.instagramPopup ? 'active' : 'false'"
+          *ngIf="instagramPopup"
+          message="Please note that personal social media sites reflect opinions or beliefs from me, and do not necessarily reflect the beliefs of my current or previous employers. Social media profiles will always adhere to my employers' Code of Ethical and Professional Standards, Non-Discrimination Policy, and Employee Confidentiality Agreement."
+          redirectTitle="Instagram"
+          redirectLink="https://www.instagram.com/natereprogle"
+          [redirectTime]="7"
+        ></app-popup>
       </li>
       <li>
         <a href="https://www.github.com/TerrrorByte">GitHub</a>
@@ -34,10 +47,13 @@
 </div>
 <!--  Copyright -->
 <div class="flex flex-col items-center justify-center text-xs">
-  <h2>Copyright © 2022-{{getYear()}} | Nate Reprogle</h2>
+  <h2>Copyright © 2022-{{ getYear() }} | Nate Reprogle</h2>
   <p>
     Site source:
-    <a href="https://www.github.com/TerrrorByte/reprogle.org" class="hover:underline">
+    <a
+      href="https://www.github.com/TerrrorByte/reprogle.org"
+      class="hover:underline"
+    >
       click here
     </a>
   </p>

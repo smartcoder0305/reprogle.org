@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PopupComponent } from './components/popup/popup.component';
 
 import { NgxTurnstileModule } from 'ngx-turnstile';
+import {
+  NgxGoogleAnalyticsModule,
+  NgxGoogleAnalyticsRouterModule,
+} from 'ngx-google-analytics';
 
 @NgModule({
   declarations: [
@@ -34,6 +39,9 @@ import { NgxTurnstileModule } from 'ngx-turnstile';
     AppRoutingModule,
     BrowserAnimationsModule,
     NgxTurnstileModule,
+    FormsModule,
+    NgxGoogleAnalyticsModule.forRoot('G-TFX3YYT899'),
+    NgxGoogleAnalyticsRouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

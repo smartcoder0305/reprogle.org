@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { PopUpService } from 'src/app/services/pop-up.service';
 import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
@@ -17,10 +16,22 @@ import { animate, style, transition, trigger } from '@angular/animations';
   ],
 })
 export class FooterComponent {
-  constructor(public popUp: PopUpService) {}
+  instagramPopup: boolean = false;
+  twitterPopup: boolean = false;
 
-  setPopUp(state: boolean) {
-    this.popUp.setPopUp(state);
+  setPopUp(state: boolean, site: string) {
+    switch (site) {
+      case 'instagram':
+        this.instagramPopup = state;
+        break;
+      case 'twitter':
+        this.twitterPopup = state;
+        break;
+      default:
+        console.warn(
+          `Popup for site ${site} was called, but shouldn't exist. Check the code!`
+        );
+    }
   }
 
   getYear(): number {

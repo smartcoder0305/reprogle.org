@@ -1,6 +1,13 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+  EventEmitter,
+} from '@angular/core';
+
 import { Subscription, interval } from 'rxjs';
-import { PopUpService } from 'src/app/services/pop-up.service';
 
 @Component({
   selector: 'app-popup',
@@ -15,18 +22,14 @@ export class PopupComponent implements OnInit, OnDestroy {
   @Input() message: string = 'Message';
   @Input() redirectTime: number = 7;
 
+  @Output() stateChange = new EventEmitter<boolean>();
+
   public timeLeft: number = this.redirectTime;
 
   private subscription: Subscription | undefined;
 
-  constructor(public popUp: PopUpService) {}
-
-  openPopup() {
-    this.popUp.setPopUp(true);
-  }
-
-  closePopup() {
-    this.popUp.setPopUp(false);
+  emitStateChange(state: boolean) {
+    this.stateChange.emit(state);
   }
 
   ngOnInit(): void {
