@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --host 0.0.0.0",
-    "build": "pnpm run config -- --environment=prod && ng build",
+    "start": "pnpm run config && ng serve --host 0.0.0.0",
+    "build": "pnpm run config && ng build",
     "watch": "ng build --watch --configuration development --host 0.0.0.0",
     "test": "ng test",
     "config": "ts-node scripts/setenv.ts"
