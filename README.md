@@ -1,10 +1,10 @@
-# ReprogleOrg
+# Reprogle.org Website
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3. The readme will remain mostly generic, as I have no reason to change it.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `pnpm run start` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files. Note that the contact form *will not work* due to requiring environment variables that are purposely not synced to the repo.
 
 ## Code scaffolding
 
