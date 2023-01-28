@@ -1,10 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./app/**/*.{js,ts,jsx,tsx}",
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./src/**/*.{html,ts}", "./src/*.{html,ts}"],
   theme: {
     extend: {
       colors: {
@@ -19,5 +15,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@headlessui/tailwindcss")],
+  plugins: [],
 };
