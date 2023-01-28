@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { LinkInjectorService } from './services/link-injector.service';
+import { HttpHeaders } from '@angular/common/http';
 
 import { metaTags } from './metaTags';
 
