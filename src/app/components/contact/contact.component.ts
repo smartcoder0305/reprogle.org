@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { LinkInjectorService } from 'src/app/services/link-injector.service';
-import { FormControl } from '@angular/forms';
 
 import { metaTags } from 'src/app/metaTags';
 import { environment } from '../../../environments/environment';
+
+type Message = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  messageContent: string;
+};
 
 @Component({
   selector: 'app-contact',
@@ -12,10 +18,12 @@ import { environment } from '../../../environments/environment';
   styleUrls: ['./contact.component.css'],
 })
 export class ContactComponent {
-  firstName = '';
-  lastName = '';
-  email = '';
-  message = '';
+  message: Message = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    messageContent: '',
+  };
 
   confirm = 'hidden';
   button = 'text_gradient mt-2 cursor-pointer rounded-md py-2 font-extrabold';
@@ -44,11 +52,7 @@ export class ContactComponent {
     linkInjector.createLink('preconnect', 'https://fonts.gstatic.com', true);
   }
 
-  doSomething() {}
-
-  handleSubmit(event: Event) {
-    event.preventDefault();
-
+  handleSubmit() {
     switch (this.turnstileState) {
       case 'error': {
         alert('Turnstile verification error. Please refresh and try again');
@@ -66,10 +70,10 @@ export class ContactComponent {
             {
               type: 'rich',
               color: 0x0d1260,
-              title: `From ${this.firstName} ${this.lastName}`,
-              description: this.message,
+              title: `From ${this.message.firstName} ${this.message.lastName}`,
+              description: this.message.messageContent,
               footer: {
-                text: `Reply to ${this.email}`,
+                text: `Reply to ${this.message.email}`,
               },
             },
           ],

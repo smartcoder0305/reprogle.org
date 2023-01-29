@@ -21,7 +21,11 @@
       </p>
     </div>
     <div class="mb-7 block text-white md:flex md:justify-between">
-      <form class="flex flex-col items-start" (submit)="handleSubmit($event)">
+      <form
+        ngNativeValidate
+        class="flex flex-col items-start"
+        (ngSubmit)="handleSubmit()"
+      >
         <div>
           <label htmlFor="name">
             Name <span class="text-red-300">*</span>
@@ -34,7 +38,7 @@
               id="fname"
               name="fname"
               class="w-full rounded-sm p-1 text-black"
-              [(ngModel)]="firstName"
+              [(ngModel)]="message.firstName"
               placeholder="John"
               required
             />
@@ -48,7 +52,7 @@
               id="lname"
               name="lname"
               class="w-full rounded-sm p-1 text-black"
-              [(ngModel)]="lastName"
+              [(ngModel)]="message.lastName"
               placeholder="Doe"
               required
             />
@@ -67,7 +71,7 @@
             id="email"
             name="email"
             class="w-full rounded-sm p-1 text-black"
-            [(ngModel)]="email"
+            [(ngModel)]="message.email"
             placeholder="john.doe@email.com"
             required
           />
@@ -81,7 +85,7 @@
             name="message"
             id="message"
             class="w-full rounded-sm p-1 text-black"
-            [(ngModel)]="message"
+            [(ngModel)]="message.messageContent"
             rows="6"
             placeholder="I was hoping to inquire about..."
             required
