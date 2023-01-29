@@ -3,7 +3,10 @@
   "version": 1,
   "cli": {
     "packageManager": "pnpm",
-    "analytics": "93c472b5-22f2-4f6e-9a86-3511bc48c1a9"
+    "analytics": "93c472b5-22f2-4f6e-9a86-3511bc48c1a9",
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -119,7 +122,17 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "karmaConfig": "karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
           }
         }
       }

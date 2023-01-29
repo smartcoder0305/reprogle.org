@@ -10,7 +10,7 @@ import { metaTags } from 'src/app/metaTags';
   styleUrls: ['./keys.component.css'],
 })
 export class KeysComponent {
-  expanded: boolean = false;
+  expanded = false;
 
   expandArrow = `
     <svg

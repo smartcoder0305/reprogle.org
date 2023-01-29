@@ -6,8 +6,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./resume-item.component.css'],
 })
 export class ResumeItemComponent {
-  @Input() timeRange: string = 'Time Range';
-  @Input() company: string = 'Company';
-  @Input() title: string = 'Title';
-  @Input() description: string = 'Description';
+  @Input() timeRange = 'Time Range';
+  @Input() company = 'Company';
+  @Input() title = 'Title';
+  @Input() description = 'Description';
 }

@@ -15,12 +15,12 @@ import { Subscription, interval } from 'rxjs';
   styleUrls: ['./popup.component.css'],
 })
 export class PopupComponent implements OnInit, OnDestroy {
-  popupOpen: boolean = true;
+  popupOpen = true;
 
-  @Input() redirectTitle: string = 'Title';
-  @Input() redirectLink: string = 'https://example.com';
-  @Input() message: string = 'Message';
-  @Input() redirectTime: number = 7;
+  @Input() redirectTitle = 'Title';
+  @Input() redirectLink = 'https://example.com';
+  @Input() message = 'Message';
+  @Input() redirectTime = 7;
 
   @Output() stateChange = new EventEmitter<boolean>();
 
