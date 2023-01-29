@@ -7,7 +7,16 @@ const targetPath = isProduction
   ? `./src/environments/environment.prod.ts`
   : `./src/environments/environment.ts`;
 
-console.log(isProduction);
+if (isProduction) {
+  console.log(
+    'Currently using a production environment. Setting environment variables as such'
+  );
+} else {
+  console.log(
+    'Running application in development mode. Angular will handle migrating environment variables, assuming environment.dev.ts has been configured properly'
+  );
+  process.exit(0);
+}
 
 // we have access to our environment variables
 // in the process.env object thanks to dotenv

@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "pnpm run config && ng serve --host 0.0.0.0",
+    "start": "echo \"Please run either start:dev or start:prod to begin development server based on environment\"",
+    "start:dev": "export NODE_ENV=dev && pnpm run config && ng serve --host 0.0.0.0 --configuration=development",
+    "start:prod": "export NODE_ENV=prod && pnpm run config && ng serve --host 0.0.0.0 --configuration=production",
     "build": "pnpm run config && ng build",
     "watch": "ng build --watch --configuration development --host 0.0.0.0",
     "test": "ng test",
