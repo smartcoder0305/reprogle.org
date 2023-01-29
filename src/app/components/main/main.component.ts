@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./main.component.css'],
 })
 export class MainComponent {
-  headerText: string = 'Hello, my name is';
-  mainText: string = 'Nate Reprogle';
-  footerText: string = 'IT Enthusiast';
-  image: string = '/assets/Profile.jpg';
-  imageAlt: string = 'Nate Reprogle';
+  headerText = 'Hello, my name is';
+  mainText = 'Nate Reprogle';
+  footerText = 'IT Enthusiast';
+  image = '/assets/Profile.jpg';
+  imageAlt = 'Nate Reprogle';
 }

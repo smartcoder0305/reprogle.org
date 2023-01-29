@@ -16,8 +16,8 @@ import { animate, style, transition, trigger } from '@angular/animations';
   ],
 })
 export class FooterComponent {
-  instagramPopup: boolean = false;
-  twitterPopup: boolean = false;
+  instagramPopup = false;
+  twitterPopup = false;
 
   setPopUp(state: boolean, site: string) {
     switch (site) {

@@ -40,9 +40,9 @@ export class ContactComponent {
   }
 
   constructor(
-    private metaService: Meta,
-    private titleService: Title,
-    private linkInjector: LinkInjectorService
+    metaService: Meta,
+    titleService: Title,
+    linkInjector: LinkInjectorService
   ) {
     titleService.setTitle('Contact - Nate Reprogle');
     metaService.addTags(metaTags);
