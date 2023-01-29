@@ -19,6 +19,7 @@ specifiers:
   karma: ~6.4.0
   karma-chrome-launcher: ~3.1.0
   karma-coverage: ~2.2.0
+  karma-firefox-launcher: ^2.1.2
   karma-jasmine: ~5.1.0
   karma-jasmine-html-reporter: ~2.0.0
   ngx-google-analytics: ^14.0.1
@@ -57,6 +58,7 @@ devDependencies:
   karma: 6.4.1
   karma-chrome-launcher: 3.1.1
   karma-coverage: 2.2.0
+  karma-firefox-launcher: 2.1.2
   karma-jasmine: 5.1.0_karma@6.4.1
   karma-jasmine-html-reporter: 2.0.0_uk6l45dlsjldsnfgnal4othgyq
   postcss: 8.4.21
@@ -4384,6 +4386,13 @@ packages:
       minimatch: 3.1.2
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /karma-firefox-launcher/2.1.2:
+    resolution: {integrity: sha512-VV9xDQU1QIboTrjtGVD4NCfzIH7n01ZXqy/qpBhnOeGVOkG5JYPEm8kuSd7psHE6WouZaQ9Ool92g8LFweSNMA==}
+    dependencies:
+      is-wsl: 2.2.0
+      which: 2.0.2
     dev: true
 
   /karma-jasmine-html-reporter/2.0.0_uk6l45dlsjldsnfgnal4othgyq:
