@@ -71,7 +71,7 @@ export class ContactComponent {
           message: this.message.messageContent,
         };
 
-        fetch(`${this.environment.apiurl}`, {
+        fetch(`${this.environment.apiurl}/discord`, {
           method: 'POST',
           body: JSON.stringify(contents),
           headers: {
