@@ -1,12 +1,14 @@
-const { writeFile } = require('fs');
+import { writeFile } from 'fs';
 
-// read the command line arguments passed with yargs
+// Check if the NODE_ENV env variable is set to prod
 const isProduction = process.env['NODE_ENV'] === 'prod';
 
+// If we're using a prod environment, we write to the environment.prod.ts file. Otherwise, write to the environment.ts file
 const targetPath = isProduction
-  ? `./src/environments/environment.prod.ts`
-  : `./src/environments/environment.ts`;
+  ? './src/environments/environment.prod.ts'
+  : './src/environments/environment.ts';
 
+// If we are in prod, continue. Otherwise, exit as Angular will handle environment files for us
 if (isProduction) {
   console.log(
     'Currently using a production environment. Setting environment variables as such'
@@ -18,18 +20,16 @@ if (isProduction) {
   process.exit(0);
 }
 
-// we have access to our environment variables
-// in the process.env object thanks to dotenv
+// Create the contents of the environment file using environment variables set via our host (Which is Vercel)
 const environmentFileContent = `
 export const environment = {
    production: ${isProduction},
-   turnstileSecret: "${process.env['PUBLIC_TURNSTILE_SECRET']}",
    turnstileSiteKey: "${process.env['PUBLIC_TURNSTILE_SITE_KEY']}",
-   webhook: "${process.env['PUBLIC_WEBHOOK']}"
+   apiurl: "${process.env['PUBLIC_API_URL']}"
 };
 `;
 
-// write the content to the respective file
+// Write the contents of the environment file to the actual environment file
 writeFile(targetPath, environmentFileContent, function (err: any) {
   if (err) {
     console.log(err);

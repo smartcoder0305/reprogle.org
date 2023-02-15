@@ -1,7 +1,5 @@
-
 export const environment = {
-   production: false,
-   turnstileSecret: "undefined",
-   turnstileSiteKey: "undefined",
-   webhook: "undefined"
+  production: false,
+  turnstileSiteKey: 'undefined',
+  apiurl: 'undefined',
 };
