@@ -65,21 +65,13 @@ export class ContactComponent {
       default: {
         // This will create a webhook to send to Discord. I was going to do email but webhooks were way easier
         const contents = {
-          content: 'A new form has been submitted from reprogle.org',
-          embeds: [
-            {
-              type: 'rich',
-              color: 0x0d1260,
-              title: `From ${this.message.firstName} ${this.message.lastName}`,
-              description: this.message.messageContent,
-              footer: {
-                text: `Reply to ${this.message.email}`,
-              },
-            },
-          ],
+          firstName: this.message.firstName,
+          lastName: this.message.lastName,
+          email: this.message.email,
+          message: this.message.messageContent,
         };
 
-        fetch(`${this.environment.webhook}`, {
+        fetch(`${this.environment.apiurl}`, {
           method: 'POST',
           body: JSON.stringify(contents),
           headers: {
