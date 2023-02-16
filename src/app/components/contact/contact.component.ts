@@ -36,7 +36,7 @@ export class ContactComponent {
 
     console.log(`Token received: ${event}`);
     const result = await fetch(`${this.environment.apiurl}/verify-turnstile`, {
-      body: JSON.stringify({ event }),
+      body: JSON.stringify({ "token": event }),
       method: "POST",
       headers: {
         "content-type": "application/json",
