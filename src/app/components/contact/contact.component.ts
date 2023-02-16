@@ -31,12 +31,25 @@ export class ContactComponent {
   turnstileState = 'error';
 
   environment = environment;
-  resolveKey(event: string | null) {
+  async resolveKey(event: string | null) {
     this.turnstileState = 'success';
+
     console.log(`Token received: ${event}`);
-    console.warn(
-      'This token has not been verified for accuracy, so it could be possible this token is a repeat or forgery.'
-    );
+    const result = await fetch(`${this.environment.apiurl}/verify-turnstile`, {
+      body: JSON.stringify({ event }),
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+    });
+
+    const outcome = await result.json();
+    if (outcome.success) {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      this.turnstileState = event!;
+    } else {
+      this.turnstileState = "error";
+    }
   }
 
   constructor(
