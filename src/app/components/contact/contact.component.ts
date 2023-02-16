@@ -31,7 +31,7 @@ export class ContactComponent {
   turnstileState = 'error';
 
   environment = environment;
-  async resolveKey(event: string) {
+  async resolveKey(event: string | null) {
     this.turnstileState = 'success';
 
     console.log(`Token received: ${event}`);
@@ -45,7 +45,8 @@ export class ContactComponent {
 
     const outcome = await result.json();
     if (outcome.success) {
-      this.turnstileState = event;
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      this.turnstileState = event!;
     } else {
       this.turnstileState = "error";
     }
