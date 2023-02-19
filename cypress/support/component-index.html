@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Components App</title>
+    <link href="https://cdn.tailwindcss.com/3.2.6" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "gradient-orange": "#cc8e32",
+              "gradient-purple": "#a27cf2",
+              "dark-base-blue-100": "#010b1f",
+              "dark-base-blue-200": "#021740",
+            },
+            fontFamily: {
+              body: ["Montserrat", "sans-serif"],
+              heading: ["Playfair Display", "serif"],
+            },
+          },
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div data-cy-root></div>
+  </body>
+</html>
