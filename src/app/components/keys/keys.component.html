@@ -9,7 +9,7 @@
   <div
     class="my-5 px-5 text-white md:mx-auto md:flex md:max-w-screen-md md:flex-col md:justify-evenly md:space-y-2 lg:max-w-screen-lg xl:max-w-screen-xl"
   >
-    <div class="flex flex-col space-y-4 pb-10">
+    <div class="flex flex-col space-y-4 pb-10" id="pgp-key">
       <h3 class="text-xl md:text-2xl">PGP Key</h3>
       <p>Below is my PGP key I use for code signing on GitHub.</p>
       <div
@@ -54,7 +54,7 @@
         </code>
       </div>
     </div>
-    <div class="flex flex-col space-y-4 border-t pb-8">
+    <div class="flex flex-col space-y-4 border-t pb-8" id="ssh-ed25519-key">
       <h3 class="mt-2 text-xl md:text-2xl">SSH Key</h3>
       <p>
         Below is my SSH key. I don&apos;t normally use it, but it&apos;s here if
@@ -90,14 +90,14 @@
         </code>
       </div>
     </div>
-    <div class="flex flex-col space-y-2">
+    <div class="flex flex-col space-y-2" id="ssh-rsa-key">
       <h3 class="text-md mt-2 md:text-lg">RSA Key</h3>
       <p>
         I also have an old RSA Key I used to use for private servers and
         services, It may be good to have it here just in case!
       </p>
       <br />
-      <div
+      <button
         class="flex w-fit cursor-pointer py-2 pr-4 lg:py-0"
         (click)="setState(!expanded)"
       >
@@ -135,8 +135,8 @@
           </svg>
           <span class="pl-1">Click to expand</span>
         </ng-container>
-      </div>
-      <div *ngIf="expanded">
+      </button>
+      <div *ngIf="expanded" id="collapsable-key">
         <div class="flex flex-col space-y-2">
           <div
             class="w-full break-all rounded-[0.25rem] bg-slate-800 py-2 px-4 lg:w-[80%]"

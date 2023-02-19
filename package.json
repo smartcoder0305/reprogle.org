@@ -10,9 +10,9 @@
     "watch": "ng build --watch --configuration development --host 0.0.0.0",
     "config": "ts-node scripts/setenv.ts",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "e2e": "pnpm run config && ng e2e --configuration test",
+    "cypress:open": "pnpm run config && cypress open",
+    "cypress:run": "pnpm run config && cypress run"
   },
   "private": true,
   "dependencies": {

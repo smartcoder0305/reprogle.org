@@ -12,4 +12,5 @@ export default defineConfig({
     },
     specPattern: '**/*.spec.ts',
   },
+  chromeWebSecurity: false,
 });

@@ -26,6 +26,7 @@ export const environment = {
    production: ${isProduction},
    turnstileSiteKey: "${process.env['PUBLIC_TURNSTILE_SITE_KEY']}",
    apiurl: "${process.env['PUBLIC_API_URL']}"
+   cypress: false
 };
 `;
 

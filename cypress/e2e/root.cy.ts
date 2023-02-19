@@ -13,12 +13,12 @@ describe('Nav Bar', () => {
     cy.get('app-navbar').should('be.visible');
   });
 
-  it('should navigate to /contact', () => {
+  it('should navigate to /contact when clicked', () => {
     cy.get('app-navbar').contains('Contact Me').click();
     cy.url().should('include', '/contact');
   });
 
-  it('should navigate to /keys', () => {
+  it('should navigate to /keys when clicked', () => {
     cy.get('app-navbar').contains('Keys').click();
     cy.url().should('include', '/keys');
   });

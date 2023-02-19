@@ -13,6 +13,7 @@ yarn-error.log
 
 # Environment Variables
 src/environments/*.dev.ts
+src/environments/*.test.ts
 .angular
 
 # IDEs and editors
