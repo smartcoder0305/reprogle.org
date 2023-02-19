@@ -19,7 +19,7 @@ export class KeysComponent {
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
-      className="h-6 w-6"
+      class="h-6 w-6"
     >
       <path
         stroke-linecap="round"
@@ -36,7 +36,7 @@ export class KeysComponent {
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
-      className="h-6 w-6"
+      class="h-6 w-6"
     >
       <path
         stroke-linecap="round"

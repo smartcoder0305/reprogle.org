@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { LinkInjectorService } from 'src/app/services/link-injector.service';
+import { isDevMode } from '@angular/core';
 
 import { metaTags } from 'src/app/metaTags';
 import { environment } from '../../../environments/environment';
@@ -35,20 +36,25 @@ export class ContactComponent {
     this.turnstileState = 'success';
 
     console.log(`Token received: ${event}`);
+    let outcome;
     const result = await fetch(`${this.environment.apiurl}/verify-turnstile`, {
-      body: JSON.stringify({ "token": event }),
-      method: "POST",
+      body: JSON.stringify({ token: event }),
+      method: 'POST',
       headers: {
-        "content-type": "application/json",
+        'content-type': 'application/json',
       },
     });
+    if (environment.cypress && isDevMode()) {
+      outcome = { success: true };
+    } else {
+      outcome = await result.json();
+    }
 
-    const outcome = await result.json();
     if (outcome.success) {
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       this.turnstileState = event!;
     } else {
-      this.turnstileState = "error";
+      this.turnstileState = 'error';
     }
   }
 

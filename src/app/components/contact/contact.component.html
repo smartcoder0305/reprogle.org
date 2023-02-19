@@ -8,6 +8,7 @@
   ></app-header>
   <div
     class="my-20 px-4 text-white md:mx-auto md:flex md:max-w-screen-md md:justify-between md:px-5 lg:max-w-screen-lg xl:max-w-screen-xl"
+    id="contact"
   >
     <div class="mb-5 flex w-full flex-col space-y-4 md:w-1/2 md:pr-5">
       <h1 class="font-heading text-2xl text-white md:text-3xl lg:text-4xl">
@@ -20,16 +21,14 @@
         form and I&apos;ll get back to you soon.
       </p>
     </div>
-    <div class="mb-7 block text-white md:flex md:justify-between">
+    <div class="mb-7 block text-white md:flex md:justify-between" id="contact-form">
       <form
-        ngNativeValidate
-        class="flex flex-col items-start"
         (ngSubmit)="handleSubmit()"
+        class="flex flex-col items-start"
+        ngNativeValidate
       >
         <div>
-          <label htmlFor="name">
-            Name <span class="text-red-300">*</span>
-          </label>
+          <label> Name <span class="text-red-300">*</span></label>
         </div>
         <div class="block w-full md:flex md:justify-between md:space-x-5">
           <div class="mb-5">
@@ -43,7 +42,7 @@
               required
             />
             <br />
-            <label htmlFor="name" class="text-sm"> First </label>
+            <label for="fname" class="text-sm"> First </label>
             <br />
           </div>
           <div class="mb-5">
@@ -57,14 +56,12 @@
               required
             />
             <br />
-            <label htmlFor="lname" class="text-sm"> Last </label>
+            <label for="lname" class="text-sm"> Last </label>
             <br />
           </div>
         </div>
         <div class="mb-7 w-full">
-          <label htmlFor="email">
-            Email <span class="text-red-300">*</span>
-          </label>
+          <label for="email"> Email <span class="text-red-300">*</span> </label>
           <br />
           <input
             type="email"
@@ -78,7 +75,7 @@
           <br />
         </div>
         <div class="mb-4 w-full">
-          <label htmlFor="message">
+          <label for="message">
             Message <span class="text-red-300">*</span>
           </label>
           <textarea
@@ -99,7 +96,7 @@
         <button type="submit" value="Submit" class="{{ button }}">
           SUBMIT
         </button>
-        <h1 class="{{ confirm }}">
+        <h1 class="{{ confirm }}" id="thanks-message">
           Thanks for your message! I&apos;ll be in touch shortly
         </h1>
       </form>
