@@ -5,7 +5,10 @@
     "packageManager": "pnpm",
     "analytics": "93c472b5-22f2-4f6e-9a86-3511bc48c1a9",
     "schematicCollections": [
-      "@angular-eslint/schematics"
+      "@cypress/schematic",
+      "@cypress/schematic",
+      "@angular-eslint/schematics",
+      "@schematics/angular"
     ]
   },
   "newProjectRoot": "projects",
@@ -107,6 +110,51 @@
               "src/**/*.ts",
               "src/**/*.html"
             ]
+          }
+        },
+        "cypress-run": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "reprogleorg:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "reprogleorg:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "watch": true,
+            "headless": false
+          }
+        },
+        "ct": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "reprogleorg:serve",
+            "watch": true,
+            "headless": false,
+            "testingType": "component"
+          },
+          "configurations": {
+            "development": {
+              "devServerTarget": "reprogleorg:serve:development"
+            }
+          }
+        },
+        "e2e": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "reprogleorg:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "reprogleorg:serve:production"
+            }
           }
         }
       }

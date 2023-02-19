@@ -36,10 +36,10 @@ export class ContactComponent {
 
     console.log(`Token received: ${event}`);
     const result = await fetch(`${this.environment.apiurl}/verify-turnstile`, {
-      body: JSON.stringify({ "token": event }),
-      method: "POST",
+      body: JSON.stringify({ token: event }),
+      method: 'POST',
       headers: {
-        "content-type": "application/json",
+        'content-type': 'application/json',
       },
     });
 
@@ -48,7 +48,7 @@ export class ContactComponent {
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       this.turnstileState = event!;
     } else {
-      this.turnstileState = "error";
+      this.turnstileState = 'error';
     }
   }
 

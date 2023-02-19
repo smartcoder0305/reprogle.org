@@ -22,14 +22,12 @@
     </div>
     <div class="mb-7 block text-white md:flex md:justify-between">
       <form
-        ngNativeValidate
-        class="flex flex-col items-start"
         (ngSubmit)="handleSubmit()"
+        class="flex flex-col items-start"
+        ngNativeValidate
       >
         <div>
-          <label htmlFor="name">
-            Name <span class="text-red-300">*</span>
-          </label>
+          <label> Name <span class="text-red-300">*</span></label>
         </div>
         <div class="block w-full md:flex md:justify-between md:space-x-5">
           <div class="mb-5">
@@ -43,7 +41,7 @@
               required
             />
             <br />
-            <label htmlFor="name" class="text-sm"> First </label>
+            <label for="fname" class="text-sm"> First </label>
             <br />
           </div>
           <div class="mb-5">
@@ -57,14 +55,12 @@
               required
             />
             <br />
-            <label htmlFor="lname" class="text-sm"> Last </label>
+            <label for="lname" class="text-sm"> Last </label>
             <br />
           </div>
         </div>
         <div class="mb-7 w-full">
-          <label htmlFor="email">
-            Email <span class="text-red-300">*</span>
-          </label>
+          <label for="email"> Email <span class="text-red-300">*</span> </label>
           <br />
           <input
             type="email"
@@ -78,7 +74,7 @@
           <br />
         </div>
         <div class="mb-4 w-full">
-          <label htmlFor="message">
+          <label for="message">
             Message <span class="text-red-300">*</span>
           </label>
           <textarea

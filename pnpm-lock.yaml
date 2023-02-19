@@ -17,6 +17,7 @@ specifiers:
   '@angular/platform-browser': ^15.1.5
   '@angular/platform-browser-dynamic': ^15.1.5
   '@angular/router': ^15.1.5
+  '@cypress/schematic': 2.5.0
   '@types/node': ^18.14.0
   '@typescript-eslint/eslint-plugin': 5.52.0
   '@typescript-eslint/parser': 5.52.0
@@ -57,6 +58,7 @@ devDependencies:
   '@angular-eslint/template-parser': 15.2.1_7kw3g6rralp5ps6mg3uyzz6azm
   '@angular/cli': 15.1.6
   '@angular/compiler-cli': 15.1.5_nolqrmukmycxjx7xovu3ezjhk4
+  '@cypress/schematic': 2.5.0_wa6k447xifwmbgbnenml4znpai
   '@types/node': 18.14.0
   '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
   '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
@@ -1768,6 +1770,18 @@ packages:
       tough-cookie: 2.5.0
       tunnel-agent: 0.6.0
       uuid: 8.3.2
+    dev: true
+
+  /@cypress/schematic/2.5.0_wa6k447xifwmbgbnenml4znpai:
+    resolution: {integrity: sha512-Yt/fQxYIHl9lU8LSoJL92nIwTVyYG5uP4VqW4taTn3viVWvssjK7sRtTI/LRxOoeMYX2RRlXQyUbFEikByn0cQ==}
+    peerDependencies:
+      '@angular/cli': '>=14'
+      '@angular/core': '>=14'
+    dependencies:
+      '@angular/cli': 15.1.6
+      '@angular/core': 15.1.5_rxjs@7.8.0+zone.js@0.12.0
+      jsonc-parser: 3.2.0
+      rxjs: 6.6.7
     dev: true
 
   /@cypress/xvfb/1.2.4_supports-color@8.1.1:
