@@ -1,0 +1,34 @@
+name: Cypress E2E Tests
+
+on:
+  push:
+    branches: ["dev"]
+  pull_request:
+    branches: [ "master" ]
+  workflow_dispatch:
+    
+jobs:
+  cypress-run:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - name: Echo secrets
+        run: |
+          echo $TEST_ENV_FILE &gt;&gt; src/environments
+          cat src/environments
+        shell: bash
+        env:
+          TEST_ENV_FILE : ${{secrets.ENVIRONMENT_TEST_TS}}
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: TEST_ENV_FILE
+          path: src/environments
+        
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
+        with:
+          build: pnpm run build
+          start: pnpm run ng serve --configuration test
