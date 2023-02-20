@@ -52,6 +52,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
         
+      - name: Install Cypress
+        run: pnpm dlx cypress install
+        
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
