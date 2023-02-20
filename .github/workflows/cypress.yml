@@ -21,11 +21,6 @@ jobs:
         shell: bash
         env:
           TEST_ENV_FILE : ${{secrets.ENVIRONMENT_TEST_TS}}
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: TEST_ENV_FILE
-          path: src/environments/environment.test.ts
           
       - uses: pnpm/action-setup@v2
         with:
