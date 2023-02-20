@@ -16,7 +16,7 @@ jobs:
         
       - name: Echo secrets
         run: |
-          echo $TEST_ENV_FILE &gt;&gt; src/environments
+          echo $TEST_ENV_FILE >> src/environments
           cat src/environments
         shell: bash
         env:
