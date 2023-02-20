@@ -16,8 +16,8 @@ jobs:
         
       - name: Echo secrets
         run: |
-          echo $TEST_ENV_FILE >> src/environments
-          cat src/environments
+          echo $TEST_ENV_FILE >> src/environments/environment.test.ts
+          cat src/environments/environment.test.ts
         shell: bash
         env:
           TEST_ENV_FILE : ${{secrets.ENVIRONMENT_TEST_TS}}
@@ -25,7 +25,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: TEST_ENV_FILE
-          path: src/environments
+          path: src/environments/environment.test.ts
         
       - name: Cypress run
         uses: cypress-io/github-action@v5
