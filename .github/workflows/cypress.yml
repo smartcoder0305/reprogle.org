@@ -26,9 +26,15 @@ jobs:
         with:
           name: TEST_ENV_FILE
           path: src/environments/environment.test.ts
+          
+      - uses: pnpm/action-setup@v2
+        with:
+          version: latest
+          run_install: true
         
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
           build: pnpm run build
           start: pnpm run ng serve --configuration test
+          install: false
