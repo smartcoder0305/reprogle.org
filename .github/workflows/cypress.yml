@@ -45,7 +45,7 @@ jobs:
         uses: actions/cache@v3.2.5
         with:
           path: '/home/runner/.cache/Cypress'
-          key: ${{ runner.os }}-cypres-cache-${{ hasFiles('**/pnpm-lock.yaml') }}
+          key: ${{ runner.os }}-cypres-cache-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-cypress-cache-
       
