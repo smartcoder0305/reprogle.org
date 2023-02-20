@@ -41,17 +41,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
       
-      - uses: actions/cache@v3
-        name: Setup Cypress cache
-        with:
-          path: '/home/runner/.cache/Cypress'
-          key: ${{ runner.os }}-cypress-binary-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-binary-
-      
       - name: Install dependencies
         run: pnpm install
         
+        # This is a fix for Cypress cacheing issues
       - name: Install Cypress
         run: pnpm dlx cypress install
         
