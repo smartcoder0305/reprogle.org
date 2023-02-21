@@ -48,7 +48,7 @@ jobs:
             
         # Setup a build cache for Cypress so we don't have to install it every time
       - name: Cache
-        uses: actions/cache@v3.2.5
+        uses: actions/cache@v3.2.6
         with:
           path: '/home/runner/.cache/Cypress'
           key: ${{ runner.os }}-cypres-cache-${{ hashFiles('**/pnpm-lock.yaml') }}
