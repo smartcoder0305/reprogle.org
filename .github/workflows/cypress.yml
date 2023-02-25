@@ -52,7 +52,7 @@ jobs:
         
         # Install Cypress, won't really do much since we have the cache
       - name: Install Cypress
-        run: pnpm install -g cypress && cypress install
+        run: pnpm install -g cypress@12.6.0 && cypress install
         
         # FINALLY run our tests
       - name: Cypress run
