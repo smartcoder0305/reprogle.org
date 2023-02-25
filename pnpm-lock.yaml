@@ -24,7 +24,7 @@ specifiers:
   autoprefixer: ^10.4.13
   cypress: ^12.6.0
   eslint: ^8.34.0
-  ngx-turnstile: ^0.0.6
+  ngx-turnstile: ^0.0.7
   postcss: ^8.4.21
   rxjs: ~7.8.0
   tailwindcss: ^3.2.7
@@ -42,7 +42,7 @@ dependencies:
   '@angular/platform-browser': 15.1.5_s7kwnqxnlkypgp4vtemlnxkbmi
   '@angular/platform-browser-dynamic': 15.1.5_pzachiwybhx467gapqhrlestmm
   '@angular/router': 15.1.5_yndgxvmaauschrcdo656cxz5sy
-  ngx-turnstile: 0.0.6_yc3im5flbqmgh4wnppeqecgnvq
+  ngx-turnstile: 0.0.7_yc3im5flbqmgh4wnppeqecgnvq
   rxjs: 7.8.0
   tslib: 2.5.0
   zone.js: 0.12.0
@@ -5949,8 +5949,8 @@ packages:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
     dev: true
 
-  /ngx-turnstile/0.0.6_yc3im5flbqmgh4wnppeqecgnvq:
-    resolution: {integrity: sha512-x+z+hzrnMsRGaETATTBvT0/sGi/k1HcOBLZYe3MWPrEexPpl2xGGDPgvxotjfuBfwXtD4/uXaWd6VZ2Yci4cBg==}
+  /ngx-turnstile/0.0.7_yc3im5flbqmgh4wnppeqecgnvq:
+    resolution: {integrity: sha512-lMXHayi8OrZcZDGI7QWG0CegzPlo0dHRiMMxBZarw6NmmB3zp22WCKBABinFfy0XrsjjsJNs0tUjvqmBURVHrw==}
     peerDependencies:
       '@angular/common': ^14.2.0
       '@angular/core': ^14.2.0
