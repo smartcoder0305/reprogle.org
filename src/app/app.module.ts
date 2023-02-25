@@ -15,10 +15,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PopupComponent } from './components/popup/popup.component';
 
 import { NgxTurnstileModule } from 'ngx-turnstile';
-import {
-  NgxGoogleAnalyticsModule,
-  NgxGoogleAnalyticsRouterModule,
-} from 'ngx-google-analytics';
 
 @NgModule({
   declarations: [
@@ -38,8 +34,6 @@ import {
     BrowserAnimationsModule,
     NgxTurnstileModule,
     FormsModule,
-    NgxGoogleAnalyticsModule.forRoot('G-TFX3YYT899'),
-    NgxGoogleAnalyticsRouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -45,15 +45,6 @@ jobs:
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
-            
-        # Setup a build cache for Cypress so we don't have to install it every time
-      - name: Cache
-        uses: actions/cache@v3.2.5
-        with:
-          path: '/home/runner/.cache/Cypress'
-          key: ${{ runner.os }}-cypres-cache-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-cypress-cache-
       
         # Install dependencies, won't really do much since we have the cache
       - name: Install dependencies
@@ -61,11 +52,11 @@ jobs:
         
         # Install Cypress, won't really do much since we have the cache
       - name: Install Cypress
-        run: pnpm dlx cypress install
+        run: pnpm install -g cypress@12.6.0 && cypress install
         
         # FINALLY run our tests
       - name: Cypress run
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v5.0.9
         with:
           build: pnpm run build --configuration test
           start: pnpm run ng serve --configuration test
