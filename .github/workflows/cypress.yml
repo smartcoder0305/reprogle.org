@@ -52,11 +52,11 @@ jobs:
         
         # Install Cypress, won't really do much since we have the cache
       - name: Install Cypress
-        run: pnpm install -g cypress && cypress install
+        run: pnpm install -g cypress@12.7.0 && cypress install
         
         # FINALLY run our tests
       - name: Cypress run
-        uses: cypress-io/github-action@v5.3.0
+        uses: cypress-io/github-action@v5.3.1
         with:
           build: pnpm run build --configuration test
           start: pnpm run ng serve --configuration test
