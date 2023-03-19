@@ -56,7 +56,7 @@ jobs:
         
         # FINALLY run our tests
       - name: Cypress run
-        uses: cypress-io/github-action@v5.4.0
+        uses: cypress-io/github-action@v5.5.0
         with:
           build: pnpm run build --configuration test
           start: pnpm run ng serve --configuration test
