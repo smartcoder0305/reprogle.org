@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ "master" ]
   workflow_dispatch:
-    
+
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04
@@ -14,29 +14,28 @@ jobs:
         # Checkout the branch
       - name: Checkout
         uses: actions/checkout@v3
-        
+
         # Create the test environment file from Actions Secrets
       - name: Echo secrets
         run: |
           echo $TEST_ENV_FILE >> src/environments/environment.test.ts
-          cat src/environments/environment.test.ts
         shell: bash
         env:
           TEST_ENV_FILE : ${{secrets.ENVIRONMENT_TEST_TS}}
-          
+
         # Setup pnpm package manager, as we don't use npm for our project
       - uses: pnpm/action-setup@v2
         with:
           version: latest
           run_install: false
-          
+
         # Get the path that pnpm uses to store files, so we can retrieve that from the build cache
       - name: Get pnpm store directory
         id: pnpm-cache
         shell: bash
         run: |
           echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-          
+
         # Retrieve the pnpm build cache
       - uses: actions/cache@v3
         name: Setup pnpm cache
@@ -45,33 +44,38 @@ jobs:
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
-      
+
+        # Setup a build cache for Cypress so we don't have to install it every time
+      - name: Cache
+        uses: actions/cache@v3.2.5
+        with:
+          path: '/home/runner/.cache/Cypress'
+          key: ${{ runner.os }}-cypres-cache-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-cypress-cache-
+
         # Install dependencies, won't really do much since we have the cache
       - name: Install dependencies
         run: pnpm install
-        
-        # Install Cypress, won't really do much since we have the cache
-      - name: Install Cypress
-        run: pnpm install -g cypress@12.7.0 && cypress install
-        
+
         # FINALLY run our tests
       - name: Cypress run
-        uses: cypress-io/github-action@v5.3.1
+        uses: cypress-io/github-action@v5
         with:
           build: pnpm run build --configuration test
           start: pnpm run ng serve --configuration test
-          install: false
-          
+          install: true
+
         # Upload screenshots of failed test and all test videos to the build artifacts
       - name: Upload failed screenshots
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         if: failure()
         with:
           name: cypress-screenshots
           path: cypress/screenshots
-         
+
       - name: Upload videos
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         if: always()
         with:
           name: cypress-videos
