@@ -44,7 +44,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/.pnpm/marked@4.3.0/node_modules/marked/marked.min.js"
+            ]
           },
           "configurations": {
             "production": {
