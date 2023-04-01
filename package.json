@@ -29,7 +29,7 @@
     "@types/express": "^4.17.17",
     "ngx-google-analytics": "^14.0.1",
     "ngx-markdown": "^15.1.2",
-    "ngx-turnstile": "^0.0.6",
+    "ngx-turnstile": "^0.0.7",
     "rxjs": "~7.8.0",
     "tslib": "^2.5.0",
     "zone.js": "~0.12.0"

@@ -44,8 +44,8 @@ dependencies:
     specifier: ^15.1.2
     version: 15.1.2(@angular/common@15.2.5)(@angular/core@15.2.5)(@angular/platform-browser@15.2.5)(@types/marked@4.0.8)(marked@4.3.0)(rxjs@7.8.0)(zone.js@0.12.0)
   ngx-turnstile:
-    specifier: ^0.0.6
-    version: 0.0.6(@angular/common@15.2.5)(@angular/core@15.2.5)
+    specifier: ^0.0.7
+    version: 0.0.7(@angular/common@15.2.5)(@angular/core@15.2.5)
   rxjs:
     specifier: ~7.8.0
     version: 7.8.0
@@ -7158,8 +7158,8 @@ packages:
       prismjs: 1.29.0
     dev: false
 
-  /ngx-turnstile@0.0.6(@angular/common@15.2.5)(@angular/core@15.2.5):
-    resolution: {integrity: sha512-x+z+hzrnMsRGaETATTBvT0/sGi/k1HcOBLZYe3MWPrEexPpl2xGGDPgvxotjfuBfwXtD4/uXaWd6VZ2Yci4cBg==}
+  /ngx-turnstile@0.0.7(@angular/common@15.2.5)(@angular/core@15.2.5):
+    resolution: {integrity: sha512-lMXHayi8OrZcZDGI7QWG0CegzPlo0dHRiMMxBZarw6NmmB3zp22WCKBABinFfy0XrsjjsJNs0tUjvqmBURVHrw==}
     peerDependencies:
       '@angular/common': ^14.2.0
       '@angular/core': ^14.2.0
