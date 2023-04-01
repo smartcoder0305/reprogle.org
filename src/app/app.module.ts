@@ -15,13 +15,17 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PopupComponent } from './components/popup/popup.component';
 
 import { NgxTurnstileModule } from 'ngx-turnstile';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config';
-import {NgOptimizedImage} from "@angular/common";
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import {
+  provideRemoteConfig,
+  getRemoteConfig,
+} from '@angular/fire/remote-config';
+import { NgOptimizedImage } from '@angular/common';
 import { BlogComponent } from './pages/blog/blog.component';
-import { BlogPostComponent } from './components/blog-post/blog-post.component';
+import { BlogPostComponent } from './pages/blog-post/blog-post.component';
+import { BlogCardComponent } from './components/blog-card/blog-card.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +40,7 @@ import { BlogPostComponent } from './components/blog-post/blog-post.component';
     PopupComponent,
     BlogComponent,
     BlogPostComponent,
+    BlogCardComponent,
   ],
   imports: [
     BrowserModule,

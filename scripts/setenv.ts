@@ -3,7 +3,7 @@ import * as process from 'process';
 
 // Check if the NODE_ENV env variable is set to prod
 const isProduction = process.env['NODE_ENV'] === 'prod';
-const isGitHubCI = process.env['CI'] === 'true';
+const isGitHubCI = !!process.env['GITHUB_ACTIONS'];
 
 // If we're using a prod environment, we write to the environment.prod.ts file. Otherwise, write to the environment.ts file
 const targetPath = isProduction

@@ -12,8 +12,10 @@ COPY . .
 COPY --from=dependencies /app/node_modules ./node_modules
 ARG apiurl
 ARG sitekey
+ARG firebasekey
 ENV PUBLIC_API_URL=$apiurl
 ENV PUBLIC_TURNSTILE_SITE_KEY=$sitekey
+ENV PUBLIC_FIREBASE_API_KEY=$firebasekey
 ENV NODE_ENV='prod'
 RUN pnpm build
 RUN pnpm prune --prod

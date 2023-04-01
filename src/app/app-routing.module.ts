@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ContactComponent } from './pages/contact/contact.component';
 import { KeysComponent } from './pages/keys/keys.component';
 import { MainComponent } from './pages/main/main.component';
-import {BlogComponent} from "./pages/blog/blog.component";
-import {BlogPostComponent} from "./components/blog-post/blog-post.component";
+import { BlogComponent } from './pages/blog/blog.component';
+import { BlogPostComponent } from './pages/blog-post/blog-post.component';
 
 const routes: Routes = [
   { path: 'contact', component: ContactComponent },

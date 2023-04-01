@@ -1,0 +1,14 @@
+<div *ngIf="blogPost" class="relative flex justify-begin p-[10px] md:p-[20px] lg:p-[30px] xl:p-[50px]">
+  <div class="square overflow-hidden hover:cursor-pointer">
+    <img *ngIf="blogPost.headerImage" src="{{ blogPost.headerImage }}" alt="" class="object-cover mask w-[460px]"
+         aria-hidden="true"/>
+    <h1 class="text-left px-[30px] mt-4 text-black font-heading text-4xl break-normal">{{ blogPost.title }}</h1>
+    <h3 class="text-left px-[30px] mb-2 text-black font-heading text-xl break-normal">{{blogPost.author}}</h3>
+    <ng-container *ngIf="blogPost.headerImage">
+      <p>{{ blogPost.body.length > 500 ? (blogPost.body | slice:0:500) + '...' : (blogPost.body) }}</p>
+    </ng-container>
+    <ng-container *ngIf="!blogPost.headerImage">
+      <p>{{ blogPost.body.length > 1000 ? (blogPost.body | slice:0:1000) + '...' : (blogPost.body) }}</p>
+    </ng-container>
+  </div>
+</div>
