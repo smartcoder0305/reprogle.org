@@ -1,14 +1,19 @@
-<div *ngIf="blogPost" class="relative flex justify-begin p-[10px] md:p-[20px] lg:p-[30px] xl:p-[50px]">
-  <div class="square overflow-hidden hover:cursor-pointer">
+<div *ngIf="blogPost" class="relative flex justify-center p-[10px] md:p-[20px] lg:p-[30px]">
+  <div class="square overflow-hidden hover:cursor-pointer" (click)="navigate(blogPost)">
+    <!-- I'm suppressing the Webstorm AngularNgOptimizedImage hint here because it requires an explicit height and width, which I don't know at build time -->
+    <!--suppress AngularNgOptimizedImage -->
     <img *ngIf="blogPost.headerImage" src="{{ blogPost.headerImage }}" alt="" class="object-cover mask w-[460px]"
          aria-hidden="true"/>
     <h1 class="text-left px-[30px] mt-4 text-black font-heading text-4xl break-normal">{{ blogPost.title }}</h1>
-    <h3 class="text-left px-[30px] mb-2 text-black font-heading text-xl break-normal">{{blogPost.author}}</h3>
+    <div class="flex items-baseline px-[30px] mb-2">
+      <h3 class="text-left pr-[20px] text-black font-heading text-xl">{{blogPost.author}}</h3>
+      <h1 class="text-xs text-gray-400">{{ blogPost.timestamp.seconds * 1000 | date:'MMM d, yyyy, h:mm aa' }}</h1>
+    </div>
     <ng-container *ngIf="blogPost.headerImage">
-      <p>{{ blogPost.body.length > 500 ? (blogPost.body | slice:0:500) + '...' : (blogPost.body) }}</p>
+      <p>{{ blogPost.blurb.length > 500 ? (blogPost.blurb | slice:0:500) + '...' : (blogPost.blurb) }}</p>
     </ng-container>
     <ng-container *ngIf="!blogPost.headerImage">
-      <p>{{ blogPost.body.length > 1000 ? (blogPost.body | slice:0:1000) + '...' : (blogPost.body) }}</p>
+      <p>{{ blogPost.blurb.length > 1000 ? (blogPost.blurb | slice:0:1000) + '...' : (blogPost.blurb) }}</p>
     </ng-container>
   </div>
 </div>

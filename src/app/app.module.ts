@@ -26,6 +26,9 @@ import { NgOptimizedImage } from '@angular/common';
 import { BlogComponent } from './pages/blog/blog.component';
 import { BlogPostComponent } from './pages/blog-post/blog-post.component';
 import { BlogCardComponent } from './components/blog-card/blog-card.component';
+import { markedOptionsFactory } from './services/markdown-factory';
+import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -49,9 +52,17 @@ import { BlogCardComponent } from './components/blog-card/blog-card.component';
     NgxTurnstileModule,
     FormsModule,
     NgOptimizedImage,
+    HttpClientModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     provideRemoteConfig(() => getRemoteConfig()),
+    MarkdownModule.forRoot({
+      loader: HttpClient,
+      markedOptions: {
+        provide: MarkedOptions,
+        useFactory: markedOptionsFactory,
+      },
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

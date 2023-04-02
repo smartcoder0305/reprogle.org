@@ -42,10 +42,14 @@
               "src/.well-known/security.txt"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/prismjs/themes/prism-okaidia.css"
             ],
             "scripts": [
-              "node_modules/.pnpm/marked@4.3.0/node_modules/marked/marked.min.js"
+              "node_modules/marked/marked.min.js",
+              "node_modules/prismjs/prism.js",
+              "node_modules/prismjs/components/prism-typescript.js",
+              "node_modules/prismjs/components/prism-yaml.js"
             ]
           },
           "configurations": {

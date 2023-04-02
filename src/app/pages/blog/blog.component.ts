@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import {
   collection,
   collectionData,
@@ -32,14 +31,5 @@ export class BlogComponent {
     collection(this.store, 'blog') as CollectionReference<Blog>
   ) as Observable<Blog[]>;
 
-  constructor(
-    private store: Firestore,
-    private router: Router,
-    private route: ActivatedRoute
-  ) {}
-
-  navigate(blog: Blog) {
-    // noinspection JSIgnoredPromiseFromCall
-    this.router.navigate([blog.id], { relativeTo: this.route });
-  }
+  constructor(private store: Firestore) {}
 }

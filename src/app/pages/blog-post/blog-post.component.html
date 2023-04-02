@@ -1,1 +1,28 @@
-<p>blog-post works!</p>
+<div *ngIf="loading" class="flex flex-col justify-center items-center h-[80vh]">
+  <h1 class="font-heading text-3xl text-white">Loading post...</h1>
+  <div class="lds-ellipsis">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
+<div *ngIf="notFound">The blog post you requested could not be found!</div>
+<div *ngIf="blog && !loading" class="my-5 px-5 text-white md:mx-auto md:flex md:max-w-screen-md md:flex-col md:justify-evenly md:space-y-2 lg:max-w-screen-lg xl:max-w-screen-xl">
+  <button class="flex" (click)="navigate()">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
+    </svg>
+    Return to blog list
+  </button>
+  <img *ngIf="blog.headerImage" src="{{ blog.headerImage }}" alt="" class="object-cover mask h-[300px] w-full rounded-t-3xl"
+       aria-hidden="true"/>
+  <h1 class="font-heading text-6xl text-white">{{ blog.title }}</h1>
+  <div class="flex items-baseline mb-2">
+    <h3 class="text-left pr-[20px] text-white font-heading text-2xl">{{blog.author}}</h3>
+    <h1 class="text-sm text-gray-400">{{ blog.timestamp.seconds * 1000 | date:'MMM d, yyyy, h:mm aa' }}</h1>
+  </div>
+  <hr>
+  <markdown *ngIf="blog.body && !error" [data]="blog.body"></markdown>
+  <p *ngIf="error">An error occurred while loading the contents of the blog. Apologies for the inconvenience, check back later!</p>
+</div>

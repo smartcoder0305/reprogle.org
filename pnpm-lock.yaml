@@ -37,6 +37,9 @@ dependencies:
   '@types/express':
     specifier: ^4.17.17
     version: 4.17.17
+  marked:
+    specifier: ^4.3.0
+    version: 4.3.0
   ngx-google-analytics:
     specifier: ^14.0.1
     version: 14.0.1(@angular/common@15.2.5)(@angular/core@15.2.5)
@@ -46,6 +49,9 @@ dependencies:
   ngx-turnstile:
     specifier: ^0.0.7
     version: 0.0.7(@angular/common@15.2.5)(@angular/core@15.2.5)
+  prismjs:
+    specifier: ^1.29.0
+    version: 1.29.0
   rxjs:
     specifier: ~7.8.0
     version: 7.8.0
@@ -84,6 +90,9 @@ devDependencies:
   '@cypress/schematic':
     specifier: 2.5.0
     version: 2.5.0(@angular/cli@15.2.4)(@angular/core@15.2.5)
+  '@types/marked':
+    specifier: ^4.0.8
+    version: 4.0.8
   '@types/node':
     specifier: ^18.15.11
     version: 18.15.11
@@ -2974,7 +2983,6 @@ packages:
 
   /@types/marked@4.0.8:
     resolution: {integrity: sha512-HVNzMT5QlWCOdeuBsgXP8EZzKUf0+AXzN+sLmjvaB3ZlLqO+e4u0uXrdw9ub69wBKFs+c6/pA4r9sy6cCDvImw==}
-    dev: false
 
   /@types/mime@3.0.1:
     resolution: {integrity: sha512-Y4XFY5VJAuw0FgAqPNd6NNoV44jbq9Bz2L7Rh/J6jLTiHBSBJa9fxqQIvkIld4GsoDOcCbvzOUAbLPsSKKg+uA==}
@@ -7837,7 +7845,6 @@ packages:
     engines: {node: '>=6'}
     requiresBuild: true
     dev: false
-    optional: true
 
   /proc-log@3.0.0:
     resolution: {integrity: sha512-++Vn7NS4Xf9NacaU9Xq3URUuqZETPsf8L4j5/ckhaRYsfPeRyzGw+iDjFhV/Jr3uNmTvvddEJFWh5R1gRgUH8A==}

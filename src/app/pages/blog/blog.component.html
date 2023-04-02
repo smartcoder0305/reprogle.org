@@ -8,11 +8,11 @@
 
 <div class="relative overflow-hidden">
   <div
-    class="my-20 mx-5 md:mx-10 text-white md:flex md:basis-full md:flex-wrap md:justify-between md:px-5"
+    class="my-20 mx-5 text-white sm:flex sm:flex-wrap sm:basis-full justify-center md:grid md:grid-cols-1 md:px-5 lg:grid-cols-2 xl:grid-cols-3 lg:justify-evenly"
     id="blog">
     <h1 class="font-heading text-2xl text-white md:text-3xl lg:text-4xl" *ngIf="(blogPosts | async)?.length === 0">
       No posts yet. Check back soon!
     </h1>
-    <app-blog-card [blogPost]="blog" *ngFor="let blog of (blogPosts | async)" (click)="navigate(blog)"></app-blog-card>
+    <app-blog-card [blogPost]="blog" *ngFor="let blog of (blogPosts | async)"></app-blog-card>
   </div>
 </div>
