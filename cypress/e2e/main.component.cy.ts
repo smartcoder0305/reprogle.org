@@ -37,7 +37,7 @@ describe('Home Page', () => {
 
 describe('About Me', () => {
   it('Exists', () => {
-    cy.get('#about-me').contains('I am an IT enthusiast');
+    cy.get('#about-me').contains('I am a Software Engineer');
   });
 
   it('Should be visible', () => {

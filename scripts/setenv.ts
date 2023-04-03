@@ -3,7 +3,7 @@ import * as process from 'process';
 
 // Check if the NODE_ENV env variable is set to prod
 const isProduction = process.env['NODE_ENV'] === 'prod';
-const isGitHubCI = process.env['CI'] === 'true';
+const isGitHubCI = !!process.env['GITHUB_ACTIONS'];
 
 // If we're using a prod environment, we write to the environment.prod.ts file. Otherwise, write to the environment.ts file
 const targetPath = isProduction
@@ -30,15 +30,24 @@ if (isProduction) {
 // Create the contents of the environment file using environment variables set via our host (Which is Google Cloud Run)
 const environmentFileContent = `
 export const environment = {
-   production: ${isProduction},
-   turnstileSiteKey: "${process.env['PUBLIC_TURNSTILE_SITE_KEY']}",
-   apiurl: "${process.env['PUBLIC_API_URL']}",
-   cypress: false
+  production: ${isProduction},
+  turnstileSiteKey: "${process.env['PUBLIC_TURNSTILE_SITE_KEY']}",
+  apiurl: "${process.env['PUBLIC_API_URL']}",
+  cypress: false,
+  firebase: {
+    projectId: 'reprogle-org',
+    appId: '1:433495598224:web:7aeb40c82b29a853f86415',
+    storageBucket: 'reprogle-org.appspot.com',
+    apiKey: '${process.env['PUBLIC_FIREBASE_API_KEY']}',
+    authDomain: 'reprogle-org.firebaseapp.com',
+    messagingSenderId: '433495598224',
+    measurementId: 'G-7EQ6V6TGG7',
+  },
 };
 `;
 
 // Write the contents of the environment file to the actual environment file
-writeFile(targetPath, environmentFileContent, function (err: any) {
+writeFile(targetPath, environmentFileContent, (err: unknown) => {
   if (err) {
     console.log(err);
   }

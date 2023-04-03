@@ -1,5 +1,4 @@
 // Before each test, navigate to the keys slug to start with a clean slate
-// Most of these tests just ensure text is rendering properly. I have yet to do testing for height/width per device, but that will happen in the future
 beforeEach(() => {
   cy.visit('/keys');
 });
