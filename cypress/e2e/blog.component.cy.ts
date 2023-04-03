@@ -5,6 +5,6 @@ beforeEach(() => {
 
 describe('BlogComponent', () => {
   it('Exists', () => {
-    cy.get('app-navbar').contains('About');
+    cy.get('app-navbar').contains('Blog');
   });
-})
+});
