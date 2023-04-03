@@ -9,12 +9,6 @@
 </div>
 <div *ngIf="notFound">The blog post you requested could not be found!</div>
 <div *ngIf="blog && !loading" class="my-5 px-5 text-white md:mx-auto md:flex md:max-w-screen-md md:flex-col md:justify-evenly md:space-y-2 lg:max-w-screen-lg xl:max-w-screen-xl">
-  <button class="flex" (click)="navigate()">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
-    </svg>
-    Return to blog list
-  </button>
   <img *ngIf="blog.headerImage" src="{{ blog.headerImage }}" alt="" class="object-cover mask h-[300px] w-full rounded-t-3xl"
        aria-hidden="true"/>
   <h1 class="font-heading text-6xl text-white">{{ blog.title }}</h1>

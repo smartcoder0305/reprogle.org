@@ -9,8 +9,9 @@ import { BlogPostComponent } from './pages/blog-post/blog-post.component';
 const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'keys', component: KeysComponent },
-  { path: 'blog', component: BlogComponent },
-  { path: 'blog/:id', component: BlogPostComponent },
+  { path: 'blog', redirectTo: 'blog/posts' },
+  { path: 'blog/posts', component: BlogComponent },
+  { path: 'blog/post/:id', component: BlogPostComponent },
   { path: '', pathMatch: 'full', component: MainComponent },
   { path: '**', redirectTo: '' },
 ];

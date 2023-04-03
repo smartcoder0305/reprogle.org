@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Blog } from '../blog/blog';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { collection, doc, Firestore, getDoc } from '@angular/fire/firestore';
 
 @Component({
@@ -10,16 +10,13 @@ import { collection, doc, Firestore, getDoc } from '@angular/fire/firestore';
 })
 export class BlogPostComponent implements OnInit {
   private blogId: string | null;
-  error = false;
   blog: Blog | null = null;
+
+  error = false;
   loading = true;
   notFound = false;
 
-  constructor(
-    private activeRoute: ActivatedRoute,
-    private store: Firestore,
-    private router: Router
-  ) {
+  constructor(private activeRoute: ActivatedRoute, private store: Firestore) {
     this.blogId = activeRoute.snapshot.paramMap.get('id');
   }
 
@@ -53,10 +50,5 @@ export class BlogPostComponent implements OnInit {
         }
       }
     );
-  }
-
-  navigate() {
-    // noinspection JSIgnoredPromiseFromCall
-    this.router.navigate(['/blog']);
   }
 }
